@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<castle>
+  <name value="Richthof"/>
+  <price value="2300" />
+  <tower id="1" hasCannon="true">
+    <position x="0" y="0" />
+    <height value="5"/>
+    <corners value="4"/>
+    <radius value="2"/>
+    <coverradius value="2.5"/>
+    <coverheight value="5.25"/>
+  </tower>
+</castle>
+

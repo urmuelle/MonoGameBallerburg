@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<castle>
+  <name value="Gutenberg"/>
+  <price value="3500" />
+  <tower id="1" hasCannon="true">
+    <position x="-3" y="0" />
+    <height value="5"/>
+    <corners value="12"/>
+    <radius value="2"/>
+    <coverradius value="2.5"/>
+    <coverheight value="5"/>
+  </tower>
+  <tower id="2" hasCannon="true">
+    <position x="3" y="0" />
+    <height value="7"/>
+    <corners value="12"/>
+    <radius value="2"/>
+    <coverradius value="2.5"/>
+    <coverheight value="7"/>
+  </tower>
+  <wall from="0" to="1" height="4.5"/>
+</castle>
+

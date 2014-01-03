@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<castle>
+  <name value="Schloss Brienz"/>
+  <price value="4000" />
+  <tower id="1" hasCannon="true">
+    <position x="-4" y="3" />
+    <height value="8"/>
+    <corners value="4"/>
+    <radius value="2"/>
+    <coverradius value="2.5"/>
+    <coverheight value="8.5"/>
+  </tower>
+  <tower id="2" hasCannon="true">
+    <position x="4" y="3" />
+    <height value="7"/>
+    <corners value="12"/>
+    <radius value="2"/>
+    <coverradius value="2.5"/>
+    <coverheight value="7.25"/>
+  </tower>
+  <tower id="3" hasCannon="true">
+    <position x="4" y="-3" />
+    <height value="6"/>
+    <corners value="12"/>
+    <radius value="2"/>
+    <coverradius value="2.5"/>
+    <coverheight value="6.5"/>
+  </tower>
+  <wall from="1" to="0" height="6"/>
+  <wall from="2" to="1" height="5.5"/>
+  <wall from="0" to="2" height="5.5"/>
+</castle>
+
