@@ -24,6 +24,7 @@ namespace MonoGameBallerburg.Screens
   /// TODO: HUD Update
   /// TODO: Game Over Screen
   /// TODO: KI Animation (move cannon)
+  /// TODO: Fix Alpha Blending
   /// TODO: Directional Light
   /// TODO: Daytime
   /// TODO: Season
@@ -68,7 +69,7 @@ namespace MonoGameBallerburg.Screens
     private const int PowderPlusMinusAmount = 50;
     private const int MaxPowderAmount = 1000;
     private const int MinPowderAmount = 150;
-    private const int MaxTextShowTime = 3000;
+    private const int MaxTextShowTime = 2000;
 
     // Menu Buttons
     private GameplayMenuItem btnFfRight;
@@ -657,9 +658,9 @@ namespace MonoGameBallerburg.Screens
     public void DrawHud()
     {
       ScreenManager.SpriteBatch.Begin();
-      //DrawString(ScreenManager.Font, ScreenManager.PlayerSettings[activePlayer].Steinkugel.ToString(CultureInfo.InvariantCulture) + " " + ResourceLoader.GetString("StoneBallsText"), new Vector2(10, 10), Color.White);
-      //DrawString(ScreenManager.Font, ScreenManager.PlayerSettings[activePlayer].Eisenkugeln.ToString(CultureInfo.InvariantCulture) + " " + ResourceLoader.GetString("IronBallsText"), new Vector2(10, 40), Color.White);
-      //DrawString(ScreenManager.Font, ScreenManager.PlayerSettings[activePlayer].Powder.ToString(CultureInfo.InvariantCulture) + " " + ResourceLoader.GetString("PowderText"), new Vector2(10, 70), Color.White);
+      ////DrawString(ScreenManager.Font, ScreenManager.PlayerSettings[activePlayer].Steinkugel.ToString(CultureInfo.InvariantCulture) + " " + ResourceLoader.GetString("StoneBallsText"), new Vector2(10, 10), Color.White);
+      ////DrawString(ScreenManager.Font, ScreenManager.PlayerSettings[activePlayer].Eisenkugeln.ToString(CultureInfo.InvariantCulture) + " " + ResourceLoader.GetString("IronBallsText"), new Vector2(10, 40), Color.White);
+      ////DrawString(ScreenManager.Font, ScreenManager.PlayerSettings[activePlayer].Powder.ToString(CultureInfo.InvariantCulture) + " " + ResourceLoader.GetString("PowderText"), new Vector2(10, 70), Color.White);
       ScreenManager.SpriteBatch.End();
     }
 

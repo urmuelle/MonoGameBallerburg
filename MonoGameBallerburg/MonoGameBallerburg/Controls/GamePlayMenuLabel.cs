@@ -8,8 +8,8 @@ namespace MonoGameBallerburg.Controls
   using Microsoft.Xna.Framework;
   using Microsoft.Xna.Framework.Graphics;
 
-  using MonoGameBallerburg.Manager;
   using MonoGameBallerburg.Gameplay;
+  using MonoGameBallerburg.Manager;
 
   public class GamePlayMenuLabel : Control
   {

@@ -127,6 +127,15 @@ namespace MonoGameBallerburg.Graphic
       shaderEffect.Parameters["xLightsWorldViewProjection"].SetValue(world * lightView);
       ////shaderEffect.Parameters["xAmbient"]
 
+      /*
+      BlendState state = new BlendState();
+      state.AlphaSourceBlend = Blend.One;
+      state.ColorSourceBlend = Blend.One;
+      state.AlphaDestinationBlend = Blend.InverseSourceAlpha;
+      state.ColorDestinationBlend = Blend.InverseSourceAlpha;
+      graphicsDevice.BlendState = state;
+      */
+
       ////Game1.Instance.GraphicsDevice.RenderState.AlphaBlendEnable = true;
       ////BallerburgGame.Instance.GraphicsDevice.BlendState = BlendState.AlphaBlend;
 
