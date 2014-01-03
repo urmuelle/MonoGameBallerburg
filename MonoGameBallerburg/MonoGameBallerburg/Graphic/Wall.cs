@@ -116,28 +116,13 @@ namespace MonoGameBallerburg.Graphic
     /// <param name="graphicsDevice">The graphics device.</param>
     public void Draw(Matrix world, Matrix viewMatrix, Matrix projectionMatrix, Matrix lightView, Effect shaderEffect, GraphicsDevice graphicsDevice)
     {
-      ////Game1.Instance.GraphicsDevice.DepthStencilState.DepthBufferEnable = true;
-      ////Game1.Instance.GraphicsDevice.DepthStencilState.DepthBufferWriteEnable = true;
-      ////Game1.Instance.GraphicsDevice.RasterizerState.FillMode = FillMode.Solid;
-      ////Game1.Instance.GraphicsDevice.RasterizerState.CullMode = CullMode.None;
-      ////Game1.Instance.GraphicsDevice.VertexDeclaration = this.vertexDeclaration;            
       shaderEffect.Parameters["xWorldViewProjection"].SetValue(world * viewMatrix * projectionMatrix);
       shaderEffect.Parameters["xTexture"].SetValue(wallTexture);
       shaderEffect.Parameters["xWorld"].SetValue(world);
       shaderEffect.Parameters["xLightsWorldViewProjection"].SetValue(world * lightView);
-      ////shaderEffect.Parameters["xAmbient"]
 
-      /*
-      BlendState state = new BlendState();
-      state.AlphaSourceBlend = Blend.One;
-      state.ColorSourceBlend = Blend.One;
-      state.AlphaDestinationBlend = Blend.InverseSourceAlpha;
-      state.ColorDestinationBlend = Blend.InverseSourceAlpha;
-      graphicsDevice.BlendState = state;
-      */
-
-      ////Game1.Instance.GraphicsDevice.RenderState.AlphaBlendEnable = true;
-      ////BallerburgGame.Instance.GraphicsDevice.BlendState = BlendState.AlphaBlend;
+      graphicsDevice.RasterizerState = RasterizerState.CullNone;
+      graphicsDevice.BlendState = BlendState.Opaque;      
 
       for (var s = 0; s < 3; ++s)
       {
@@ -150,9 +135,6 @@ namespace MonoGameBallerburg.Graphic
           graphicsDevice.DrawIndexedPrimitives(PrimitiveType.TriangleStrip, 0, 0, 4, 0, 2);
         }
       }
-
-      ////Game1.Instance.GraphicsDevice.RenderState.AlphaBlendEnable = false;
-      graphicsDevice.BlendState = BlendState.Opaque;
     }
 
     /// <summary>

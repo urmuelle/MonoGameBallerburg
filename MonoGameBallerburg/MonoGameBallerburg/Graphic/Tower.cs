@@ -158,7 +158,6 @@ namespace MonoGameBallerburg.Graphic
     public bool HasCannon
     {
       get { return hasCannon; }
-      ////set { this.hasCannon = value; }
     }
 
     /// <summary>
@@ -209,41 +208,12 @@ namespace MonoGameBallerburg.Graphic
       shaderEffect.Parameters["xWorld"].SetValue(worldTranslation);
       shaderEffect.Parameters["xLightsWorldViewProjection"].SetValue(worldTranslation * lightView);
 
-      /*
-      Game1.Instance.GraphicsDevice.DepthStencilState.DepthBufferEnable = true;
-      Game1.Instance.GraphicsDevice.DepthStencilState.DepthBufferWriteEnable = true; 
-      Game1.Instance.GraphicsDevice.RasterizerState.FillMode = FillMode.Solid;
-      Game1.Instance.GraphicsDevice.RasterizerState.CullMode = CullMode.None;
-      //Game1.Instance.GraphicsDevice.VertexDeclaration = this.vertexDeclaration;
-       * */
       graphicsDevice.RasterizerState = RasterizerState.CullNone;
-      ////Matrix worldViewProjection = viewMatrix * projectionMatrix;
-      /*
-      this.wallEffect.View = viewMatrix;
-      this.wallEffect.Projection = projectionMatrix;
-      this.wallEffect.World = Matrix.CreateTranslation(this.x, 0.0f, this.y);
-
-      this.coverEffect.View = viewMatrix;
-      this.coverEffect.Projection = projectionMatrix;
-      this.coverEffect.World = Matrix.CreateTranslation(this.x, 0.0f, this.y);
-       * */
-
-      ////RenderState state = Game1.Instance.GraphicsDevice.RenderState;
-
       graphicsDevice.BlendState = BlendState.Opaque;
       graphicsDevice.DepthStencilState = DepthStencilState.Default;
 
-      ////Game1.instance.GraphicsDevice.RenderState.AlphaBlendEnable = false;
-      ////Game1.instance.GraphicsDevice.RenderState.DepthBufferEnable = true;
-      ////Game1.instance.GraphicsDevice.RenderState.DepthBufferWriteEnable = true;
-      ////Game1.instance.GraphicsDevice.RenderState.SourceBlend = Blend.One;
-      ////Game1.instance.GraphicsDevice.RenderState.DestinationBlend = Blend.Zero;
-
-      ////this.coverEffect.Begin();
       foreach (EffectPass pass in shaderEffect.CurrentTechnique.Passes)
       {
-        ////pass.Begin();
-
         graphicsDevice.SetVertexBuffer(vb);
         graphicsDevice.Indices = coverIb;
 
@@ -253,25 +223,12 @@ namespace MonoGameBallerburg.Graphic
         graphicsDevice.DrawIndexedPrimitives(PrimitiveType.TriangleList, 0, 0, numVertices, 0, corners - 2);
       }
 
-      ////this.coverEffect.End();
-
-      ////Game1.instance.GraphicsDevice.RenderState.AlphaBlendEnable = true;
-      ////Game1.instance.GraphicsDevice.RenderState.BlendFactor = new Color(255, 255, 255);
-
-      /*
-      Game1.instance.GraphicsDevice.RenderState.SourceBlend = Blend.SourceAlpha;
-      Game1.instance.GraphicsDevice.RenderState.DestinationBlend = Blend.InverseSourceAlpha;
-      Game1.instance.GraphicsDevice.RenderState.AlphaBlendEnable = true;
-      */
-
       shaderEffect.Parameters["xTexture"].SetValue(wallTexture);
 
       for (int s = 0; s < 3; ++s)
       {
         foreach (EffectPass pass in shaderEffect.CurrentTechnique.Passes)
         {
-          ////pass.Begin();
-
           graphicsDevice.SetVertexBuffer(vb);
           graphicsDevice.Indices = ib;
 
@@ -280,12 +237,8 @@ namespace MonoGameBallerburg.Graphic
         }
       }
 
-      ////this.wallEffect.End();            
-      ////Game1.instance.GraphicsDevice.RenderState.AlphaBlendEnable = false;
-
       if (drawCannon)
       {
-        ////this.cannon.CannonPosition = Vector3.Transform(this.cannon.CannonPosition, viewMatrix);
         cannon.Draw(world, viewMatrix, projectionMatrix, shaderEffect, contentManager, graphicsDevice);
       }
     }
@@ -314,41 +267,12 @@ namespace MonoGameBallerburg.Graphic
       shaderEffect.Parameters["xWorld"].SetValue(worldTranslation);
       shaderEffect.Parameters["xLightsWorldViewProjection"].SetValue(worldTranslation * lightView);
 
-      /*
-      Game1.Instance.GraphicsDevice.DepthStencilState.DepthBufferEnable = true;
-      Game1.Instance.GraphicsDevice.DepthStencilState.DepthBufferWriteEnable = true; 
-      Game1.Instance.GraphicsDevice.RasterizerState.FillMode = FillMode.Solid;
-      Game1.Instance.GraphicsDevice.RasterizerState.CullMode = CullMode.None;
-      //Game1.Instance.GraphicsDevice.VertexDeclaration = this.vertexDeclaration;
-       * */
       graphicsDevice.RasterizerState = RasterizerState.CullNone;
-      ////Matrix worldViewProjection = viewMatrix * projectionMatrix;
-      /*
-      this.wallEffect.View = viewMatrix;
-      this.wallEffect.Projection = projectionMatrix;
-      this.wallEffect.World = Matrix.CreateTranslation(this.x, 0.0f, this.y);
-
-      this.coverEffect.View = viewMatrix;
-      this.coverEffect.Projection = projectionMatrix;
-      this.coverEffect.World = Matrix.CreateTranslation(this.x, 0.0f, this.y);
-       * */
-
-      ////RenderState state = Game1.Instance.GraphicsDevice.RenderState;
-
       graphicsDevice.BlendState = BlendState.Opaque;
       graphicsDevice.DepthStencilState = DepthStencilState.Default;
 
-      ////Game1.instance.GraphicsDevice.RenderState.AlphaBlendEnable = false;
-      ////Game1.instance.GraphicsDevice.RenderState.DepthBufferEnable = true;
-      ////Game1.instance.GraphicsDevice.RenderState.DepthBufferWriteEnable = true;
-      ////Game1.instance.GraphicsDevice.RenderState.SourceBlend = Blend.One;
-      ////Game1.instance.GraphicsDevice.RenderState.DestinationBlend = Blend.Zero;
-
-      ////this.coverEffect.Begin();
       foreach (EffectPass pass in shaderEffect.CurrentTechnique.Passes)
       {
-        ////pass.Begin();
-
         graphicsDevice.SetVertexBuffer(vb);
         graphicsDevice.Indices = coverIb;
 
@@ -358,25 +282,12 @@ namespace MonoGameBallerburg.Graphic
         graphicsDevice.DrawIndexedPrimitives(PrimitiveType.TriangleList, 0, 0, numVertices, 0, corners - 2);
       }
 
-      ////this.coverEffect.End();
-
-      ////Game1.instance.GraphicsDevice.RenderState.AlphaBlendEnable = true;
-      ////Game1.instance.GraphicsDevice.RenderState.BlendFactor = new Color(255, 255, 255);
-
-      /*
-      Game1.instance.GraphicsDevice.RenderState.SourceBlend = Blend.SourceAlpha;
-      Game1.instance.GraphicsDevice.RenderState.DestinationBlend = Blend.InverseSourceAlpha;
-      Game1.instance.GraphicsDevice.RenderState.AlphaBlendEnable = true;
-      */
-
       shaderEffect.Parameters["xTexture"].SetValue(wallTexture);
 
       for (int s = 0; s < 3; ++s)
       {
         foreach (EffectPass pass in shaderEffect.CurrentTechnique.Passes)
         {
-          ////pass.Begin();
-
           graphicsDevice.SetVertexBuffer(vb);
           graphicsDevice.Indices = ib;
 
@@ -385,12 +296,8 @@ namespace MonoGameBallerburg.Graphic
         }
       }
 
-      ////this.wallEffect.End();            
-      ////Game1.instance.GraphicsDevice.RenderState.AlphaBlendEnable = false;
-
       if (hasCannon)
       {
-        ////this.cannon.CannonPosition = Vector3.Transform(this.cannon.CannonPosition, viewMatrix);
         cannon.Draw(world, viewMatrix, projectionMatrix, shaderEffect, contentManager, graphicsDevice);
       }
     }

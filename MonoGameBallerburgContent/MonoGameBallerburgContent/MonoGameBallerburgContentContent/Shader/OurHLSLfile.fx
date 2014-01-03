@@ -74,6 +74,7 @@ PixelToFrame OurFirstPixelShader(VertexToPixel PSIn)
     float4 baseColor = tex2D(TextureSampler, PSIn.TexCoords);
     float3 normal = normalize(PSIn.Normal);
     float fDiffuse = saturate(dot(normal, xDirectionalLight0Direction));
+	float referenceAlpha = 1.0;
 
     //-- float diffuseLightingFactor = DotProduct(xLightPos, PSIn.Position3D, PSIn.Normal);
     //--diffuseLightingFactor = saturate(diffuseLightingFactor);
@@ -81,8 +82,10 @@ PixelToFrame OurFirstPixelShader(VertexToPixel PSIn)
 
     //--PSIn.TexCoords.y--;    
     
+	clip(baseColor.a - referenceAlpha);
+
     //-- Output.Color = baseColor*(diffuseLightingFactor + xAmbient);
-    Output.Color = float4(baseColor*(xAmbientIntensity * xAmbientColor) + baseColor*(fDiffuse * xDirectionalLight0Color), 1.0f);
+    Output.Color = float4(baseColor*(xAmbientIntensity * xAmbientColor) + baseColor*(fDiffuse * xDirectionalLight0Color), 1.0f);	
 
     return Output;
 }
@@ -92,7 +95,7 @@ technique Simplest
     pass Pass0
     {
         VertexShader = compile vs_4_0_level_9_1 SimplestVertexShader();
-        PixelShader = compile ps_4_0_level_9_1 OurFirstPixelShader();
+        PixelShader = compile ps_4_0_level_9_1 OurFirstPixelShader();		
     }
 }
 
@@ -122,8 +125,12 @@ SMapVertexToPixel ShadowMapVertexShader( float4 inPos : SV_Position)
 
 SMapPixelToFrame ShadowMapPixelShader(SMapVertexToPixel PSIn)
 {
-    SMapPixelToFrame Output = (SMapPixelToFrame)0;            
+	float4 baseColor = tex2D(TextureSampler, PSIn.Position2D);
+	float referenceAlpha = 1.0;
+	
+	clip(baseColor.a - referenceAlpha);
 
+    SMapPixelToFrame Output = (SMapPixelToFrame)0;	
     Output.Color = PSIn.Position2D.z/PSIn.Position2D.w;
 
     return Output;
@@ -189,7 +196,10 @@ SScenePixelToFrame ShadowedScenePixelShader(SSceneVertexToPixel PSIn)
          }
      }
          
-     float4 baseColor = tex2D(TextureSampler, PSIn.TexCoords);                
+     float4 baseColor = tex2D(TextureSampler, PSIn.TexCoords);
+	 float referenceAlpha = 1.0;
+	
+	 clip(baseColor.a - referenceAlpha);
      Output.Color = baseColor*(diffuseLightingFactor + xAmbient);
  
      return Output;

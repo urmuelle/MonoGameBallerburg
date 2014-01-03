@@ -122,7 +122,7 @@ technique CreateShadowMap
 {
     pass Pass1
     {
-        VertexShader = compile vs_4_0_level_9_1 CreateShadowMap_VertexShader();
+		VertexShader = compile vs_4_0_level_9_1 CreateShadowMap_VertexShader();
         PixelShader = compile ps_4_0_level_9_1 CreateShadowMap_PixelShader();
     }
 }

@@ -210,12 +210,6 @@ namespace MonoGameBallerburg.Graphic
     /// <param name="graphicsDevice">The graphics device.</param>
     public void Draw(Matrix world, Matrix viewMatrix, Matrix projectionMatrix, Effect shaderEffect, IContentManager contentManager, GraphicsDevice graphicsDevice)
     {
-      ////Game1.Instance.GraphicsDevice.DepthStencilState.DepthBufferEnable = true;
-      ////Game1.Instance.GraphicsDevice.DepthStencilState.DepthBufferWriteEnable = true;
-      ////Game1.Instance.GraphicsDevice.RasterizerState.FillMode = FillMode.Solid;
-      ////Game1.Instance.GraphicsDevice.RasterizerState.CullMode = CullMode.None;
-      ////Game1.Instance.GraphicsDevice.VertexDeclaration = this.vertexDeclaration;
-
       graphicsDevice.RasterizerState = RasterizerState.CullNone;
 
       this.cannonTexture = contentManager.CannonTexture;
@@ -238,7 +232,6 @@ namespace MonoGameBallerburg.Graphic
 
       this.TubeDirection = Vector3.Normalize(Vector3.Transform(this.tubeStartDirection, rotateX * rotateY));
 
-      ////Game1.Instance.GraphicsDevice.RenderState.AlphaBlendEnable = false;
       graphicsDevice.BlendState = BlendState.Opaque;
 
       for (int s = 0; s < 3; ++s)
@@ -261,9 +254,6 @@ namespace MonoGameBallerburg.Graphic
         // Draw the Tube
         foreach (EffectPass pass in shaderEffect.CurrentTechnique.Passes)
         {
-          ////pass.Begin();
-
-          ////Game1.Instance.GraphicsDevice.Vertices[0].SetSource(this.vb, 0, VertexPositionNormalTexture.SizeInBytes);
           graphicsDevice.SetVertexBuffer(this.vb);
           graphicsDevice.Indices = this.ib;
           pass.Apply();
@@ -271,9 +261,6 @@ namespace MonoGameBallerburg.Graphic
           graphicsDevice.DrawIndexedPrimitives(PrimitiveType.TriangleList, 0, 0, 66, 98, 12);
         }
       }
-
-      ////Game1.Instance.GraphicsDevice.DepthStencilState.DepthBufferEnable = false;
-      ////Game1.Instance.GraphicsDevice.DepthStencilState.DepthBufferWriteEnable = false;
     }
 
     /// <summary>
@@ -286,8 +273,6 @@ namespace MonoGameBallerburg.Graphic
       Initialize();
 
       // Initialize all parts necessary for rendering
-      ////cannonTexture = contentManager.CannonTexture;
-
       vb = new VertexBuffer(graphicsDevice, typeof(VertexPositionNormalTexture), geometry.Length, BufferUsage.WriteOnly);
       vb.SetData(geometry);
       BuildIndexBuffer();
