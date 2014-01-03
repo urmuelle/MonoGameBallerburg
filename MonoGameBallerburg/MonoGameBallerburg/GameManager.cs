@@ -2,14 +2,15 @@
 //     Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
+
 namespace MonoGameBallerburg
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
+  using System;
+  using System.Collections.Generic;
+  using System.Linq;
+  using System.Text;
 
-    public class GameManager
-    {
-    }
+  public class GameManager
+  {
+  }
 }

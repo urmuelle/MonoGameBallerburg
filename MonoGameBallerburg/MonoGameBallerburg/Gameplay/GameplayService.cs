@@ -5,23 +5,23 @@
 
 namespace MonoGameBallerburg.Gameplay
 {
-    /// <summary>
-    /// Implementation of <see cref="IGameplayService" /> />
-    /// </summary>
-    public class GameplayService : IGameplayService
+  /// <summary>
+  /// Implementation of <see cref="IGameplayService" /> />
+  /// </summary>
+  public class GameplayService : IGameplayService
+  {
+    #region IGamePlayService
+
+    public void SwitchPlayer()
     {
-        #region IGamePlayService
-        
-        public void SwitchPlayer()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public bool CheckForGameOver()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        #endregion
+      throw new System.NotImplementedException();
     }
+
+    public bool CheckForGameOver()
+    {
+      throw new System.NotImplementedException();
+    }
+
+    #endregion
+  }
 }

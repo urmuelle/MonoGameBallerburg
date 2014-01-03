@@ -5,25 +5,25 @@
 
 namespace MonoGameBallerburg.Gameplay
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
+  using System;
+  using System.Collections.Generic;
+  using System.Linq;
+  using System.Text;
+
+  /// <summary>
+  /// Interface for accessing the actual gamelogic
+  /// </summary>
+  public interface IGameplayService
+  {
+    /// <summary>
+    /// Switches the player.
+    /// </summary>
+    void SwitchPlayer();
 
     /// <summary>
-    /// Interface for accessing the actual gamelogic
+    /// Checks for game over.
     /// </summary>
-    public interface IGameplayService
-    {
-        /// <summary>
-        /// Switches the player.
-        /// </summary>
-        void SwitchPlayer();
-
-        /// <summary>
-        /// Checks for game over.
-        /// </summary>
-        /// <returns>True if the game is over.</returns>
-        bool CheckForGameOver();
-    }
+    /// <returns>True if the game is over.</returns>
+    bool CheckForGameOver();
+  }
 }

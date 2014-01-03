@@ -2,6 +2,7 @@
 //     Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
+
 namespace MonoGameBallerburg.Graphic
 {
   using System;

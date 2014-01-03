@@ -10,6 +10,8 @@ namespace MonoGameBallerburg.Controls
   using Microsoft.Xna.Framework;
   using Microsoft.Xna.Framework.Graphics;
 
+  using MonoGameBallerburg.Gameplay;
+
   /// <summary>
   /// Class to be used as a HUD
   /// </summary>
@@ -26,7 +28,7 @@ namespace MonoGameBallerburg.Controls
     public Hud(GameScreen screen)
     {
       this.parentScreen = screen;
-      this.spriteBatch = parentScreen.GraphicsManager.SpriteBatch;      
+      this.spriteBatch = parentScreen.GraphicsManager.SpriteBatch;
     }
 
     /// <summary>
@@ -131,12 +133,18 @@ namespace MonoGameBallerburg.Controls
     /// <param name="color">The color value.</param>
     private void DrawString(SpriteFont font, string text, Vector2 position, Color color)
     {
+      var origin = new Vector2(0, 0);
       this.spriteBatch.DrawString(
           font,
           text,
           new Vector2(position.X + 1, position.Y + 1),
-          Color.Black);
-      this.spriteBatch.DrawString(font, text, position, color);
+          Color.Black,
+          0,
+          origin,
+          Constants.FontScale,
+          SpriteEffects.None,
+          0);
+      this.spriteBatch.DrawString(font, text, position, color, 0, origin, Constants.FontScale, SpriteEffects.None, 0);
     }
 
     /// <summary>
@@ -159,6 +167,7 @@ namespace MonoGameBallerburg.Controls
           fontScale,
           SpriteEffects.None,
           0);
+
       this.spriteBatch.DrawString(
           font,
           text,

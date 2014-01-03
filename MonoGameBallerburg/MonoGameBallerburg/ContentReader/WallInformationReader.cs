@@ -5,20 +5,20 @@
 
 namespace MonoGameBallerburg
 {
-    using Graphic;
-    using Microsoft.Xna.Framework.Content;
+  using Graphic;
+  using Microsoft.Xna.Framework.Content;
 
-    public class WallInformationReader : ContentTypeReader<Wall>
+  public class WallInformationReader : ContentTypeReader<Wall>
+  {
+    /// <summary>
+    /// Reads the specified input.
+    /// </summary>
+    /// <param name="input">The input.</param>
+    /// <param name="existingInstance">The existing instance.</param>
+    /// <returns>A new wall object</returns>
+    protected override Wall Read(ContentReader input, Wall existingInstance)
     {
-        /// <summary>
-        /// Reads the specified input.
-        /// </summary>
-        /// <param name="input">The input.</param>
-        /// <param name="existingInstance">The existing instance.</param>
-        /// <returns>A new wall object</returns>
-        protected override Wall Read(ContentReader input, Wall existingInstance)
-        {
-            return new Wall(input);
-        }
+      return new Wall(input);
     }
+  }
 }

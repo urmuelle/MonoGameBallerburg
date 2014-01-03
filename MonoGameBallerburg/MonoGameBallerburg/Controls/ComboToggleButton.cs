@@ -15,7 +15,8 @@ namespace MonoGameBallerburg.Controls
   using Microsoft.Xna.Framework.Input;
 
   using MonoGameBallerburg.Audio;
-  using Screens;
+  using MonoGameBallerburg.Gameplay;
+  using MonoGameBallerburg.Screens;
 
   /// <summary>
   /// Button, where options are changed in a combobox like manner
@@ -198,7 +199,7 @@ namespace MonoGameBallerburg.Controls
       ////Vector2 origin = new Vector2(0, font.LineSpacing / 2);
       var origin = new Vector2(0, 0);
       spriteBatch.Begin();
-      spriteBatch.DrawString(font, text, Position, color, 0, origin, 1, SpriteEffects.None, 0);
+      spriteBatch.DrawString(font, text, Position, color, 0, origin, Constants.FontScale, SpriteEffects.None, 0);
       spriteBatch.DrawString(
           font,
           this.entries[this.selectedIndex],

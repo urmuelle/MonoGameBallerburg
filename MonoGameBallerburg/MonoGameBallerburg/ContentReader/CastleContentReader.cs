@@ -5,14 +5,14 @@
 
 namespace MonoGameBallerburg
 {
-    using Graphic;
-    using Microsoft.Xna.Framework.Content;
+  using Graphic;
+  using Microsoft.Xna.Framework.Content;
 
-    public class CastleContentReader : ContentTypeReader<Castle>
+  public class CastleContentReader : ContentTypeReader<Castle>
+  {
+    protected override Castle Read(ContentReader input, Castle existingInstance)
     {
-        protected override Castle Read(ContentReader input, Castle existingInstance)
-        {
-            return new Castle(input);
-        }
+      return new Castle(input);
     }
+  }
 }

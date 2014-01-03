@@ -2,12 +2,14 @@
 //     Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
+
 namespace MonoGameBallerburg.Controls
 {
   using Microsoft.Xna.Framework;
   using Microsoft.Xna.Framework.Graphics;
 
   using MonoGameBallerburg.Manager;
+  using MonoGameBallerburg.Gameplay;
 
   public class GamePlayMenuLabel : Control
   {
@@ -91,7 +93,7 @@ namespace MonoGameBallerburg.Controls
         Vector2 origin = new Vector2(0, 0);
 
         spriteBatch.Begin();
-        spriteBatch.DrawString(font, this.Text, this.Position, color, 0, origin, 0.1f, SpriteEffects.None, 0);
+        spriteBatch.DrawString(font, this.Text, this.Position, color, 0, origin, Constants.FontScale, SpriteEffects.None, 0);
         spriteBatch.End();
       }
     }

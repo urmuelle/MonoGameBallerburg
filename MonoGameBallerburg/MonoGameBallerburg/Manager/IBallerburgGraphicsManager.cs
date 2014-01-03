@@ -5,21 +5,21 @@
 
 namespace MonoGameBallerburg.Manager
 {
-    using System;
-    using Microsoft.Xna.Framework.Graphics;
-    using XnaGraphicsDeviceManager = Microsoft.Xna.Framework.GraphicsDeviceManager;
+  using System;
+  using Microsoft.Xna.Framework.Graphics;
+  using XnaGraphicsDeviceManager = Microsoft.Xna.Framework.GraphicsDeviceManager;
 
-    /// <summary>
-    /// GraphicsManager is responsible for managing all graphics properties.
-    /// </summary>
-    public interface IBallerburgGraphicsManager
-    {
-        GraphicsDevice GraphicsDevice { get; }
+  /// <summary>
+  /// GraphicsManager is responsible for managing all graphics properties.
+  /// </summary>
+  public interface IBallerburgGraphicsManager
+  {
+    GraphicsDevice GraphicsDevice { get; }
 
-        float AspectRatio { get; }
+    float AspectRatio { get; }
 
-        SpriteBatch SpriteBatch { get; }
+    SpriteBatch SpriteBatch { get; }
 
-        void Initialize(XnaGraphicsDeviceManager xnaGraphics);
-    }
+    void Initialize(XnaGraphicsDeviceManager xnaGraphics);
+  }
 }

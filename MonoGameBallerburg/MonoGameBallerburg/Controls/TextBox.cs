@@ -2,6 +2,7 @@
 //     Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
+
 namespace MonoGameBallerburg.Controls
 {
   using System;
@@ -10,8 +11,9 @@ namespace MonoGameBallerburg.Controls
   using Microsoft.Xna.Framework.Graphics;
   using Microsoft.Xna.Framework.Input;
 
+  using MonoGameBallerburg.Gameplay;
   using MonoGameBallerburg.Manager;
-
+  
   public class TextBox : Control
   {
     private string textString;
@@ -191,7 +193,7 @@ namespace MonoGameBallerburg.Controls
       spriteBatch.Draw(t, new Rectangle(this.textBox.Left, this.textBox.Bottom, this.textBox.Width, bw), Color.Yellow); // Bottom
       */
 
-      spriteBatch.DrawString(font, textString, new Vector2(position.X + 10, Position.Y + (font.LineSpacing / 2)), color, 0, origin, 1, SpriteEffects.None, 0);
+      spriteBatch.DrawString(font, textString, new Vector2(position.X + 10, Position.Y + (font.LineSpacing / 2)), color, 0, origin, Constants.FontScale, SpriteEffects.None, 0);
       spriteBatch.End();
 
       ////base.Draw(gameTime);

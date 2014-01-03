@@ -657,9 +657,9 @@ namespace MonoGameBallerburg.Screens
     public void DrawHud()
     {
       ScreenManager.SpriteBatch.Begin();
-      DrawString(ScreenManager.Font, ScreenManager.PlayerSettings[activePlayer].Steinkugel.ToString(CultureInfo.InvariantCulture) + " " + ResourceLoader.GetString("StoneBallsText"), new Vector2(10, 10), Color.White);
-      DrawString(ScreenManager.Font, ScreenManager.PlayerSettings[activePlayer].Eisenkugeln.ToString(CultureInfo.InvariantCulture) + " " + ResourceLoader.GetString("IronBallsText"), new Vector2(10, 40), Color.White);
-      DrawString(ScreenManager.Font, ScreenManager.PlayerSettings[activePlayer].Powder.ToString(CultureInfo.InvariantCulture) + " " + ResourceLoader.GetString("PowderText"), new Vector2(10, 70), Color.White);
+      //DrawString(ScreenManager.Font, ScreenManager.PlayerSettings[activePlayer].Steinkugel.ToString(CultureInfo.InvariantCulture) + " " + ResourceLoader.GetString("StoneBallsText"), new Vector2(10, 10), Color.White);
+      //DrawString(ScreenManager.Font, ScreenManager.PlayerSettings[activePlayer].Eisenkugeln.ToString(CultureInfo.InvariantCulture) + " " + ResourceLoader.GetString("IronBallsText"), new Vector2(10, 40), Color.White);
+      //DrawString(ScreenManager.Font, ScreenManager.PlayerSettings[activePlayer].Powder.ToString(CultureInfo.InvariantCulture) + " " + ResourceLoader.GetString("PowderText"), new Vector2(10, 70), Color.White);
       ScreenManager.SpriteBatch.End();
     }
 
@@ -1805,8 +1805,9 @@ namespace MonoGameBallerburg.Screens
     // A simple helper to draw shadowed text.
     private void DrawString(SpriteFont font, string text, Vector2 position, Color color)
     {
-      ScreenManager.SpriteBatch.DrawString(font, text, new Vector2(position.X + 1, position.Y + 1), Color.Black);
-      ScreenManager.SpriteBatch.DrawString(font, text, position, color);
+      var origin = new Vector2(0, 0);
+      ScreenManager.SpriteBatch.DrawString(font, text, new Vector2(position.X + 1, position.Y + 1), Color.Black, 0, origin, Constants.FontScale, SpriteEffects.None, 0);
+      ScreenManager.SpriteBatch.DrawString(font, text, position, color, 0, origin, Constants.FontScale, SpriteEffects.None, 0);
     }
 
     // A simple helper to draw shadowed text.

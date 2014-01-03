@@ -2,6 +2,7 @@
 //     Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
+
 namespace MonoGameBallerburg.Controls
 {
   using System;
@@ -11,7 +12,8 @@ namespace MonoGameBallerburg.Controls
   using Microsoft.Xna.Framework.Input;
   
   using MonoGameBallerburg.Audio;
-  using Screens;
+  using MonoGameBallerburg.Gameplay;
+  using MonoGameBallerburg.Screens;
 
     /// <summary>
   /// Toggling Button
@@ -188,7 +190,7 @@ namespace MonoGameBallerburg.Controls
 
       Vector2 origin = new Vector2(0, 0);
       spriteBatch.Begin();
-      spriteBatch.DrawString(font, this.text, this.Position, color, 0, origin, 1, SpriteEffects.None, 0);
+      spriteBatch.DrawString(font, this.text, this.Position, color, 0, origin, Constants.FontScale, SpriteEffects.None, 0);
       spriteBatch.DrawString(font, this.stateText, new Vector2(this.Position.X + 50, this.Position.Y + 30), color, 0, origin, 0.5f, SpriteEffects.None, 0);
       spriteBatch.End();
     }

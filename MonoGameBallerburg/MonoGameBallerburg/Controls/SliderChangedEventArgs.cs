@@ -1,34 +1,34 @@
-﻿// -----------------------------------------------------------------------
-// <copyright file="SliderChangedEventArgs.cs" company="Urs Müller">
-// TODO: Update copyright text.
+﻿// <copyright file="SliderChangedEventArgs.cs" company="Urs Müller">
+//     Urs Müller. All rights reserved.
 // </copyright>
-// -----------------------------------------------------------------------
+// <author>Urs Müller</author>
+
 namespace MonoGameBallerburg.Controls
 {
-    using System;
+  using System;
+
+  /// <summary>
+  /// A Slider Control
+  /// </summary>
+  public class SliderChangedEventArgs : EventArgs
+  {
+    private float value;
 
     /// <summary>
-    /// A Slider Control
+    /// Initializes a new instance of the <see cref="SliderChangedEventArgs"/> class.
     /// </summary>
-    public class SliderChangedEventArgs : EventArgs
+    /// <param name="sliderValue">The slider value (range 0.0 - 1.0)</param>
+    public SliderChangedEventArgs(float sliderValue)
     {
-        private float value;
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SliderChangedEventArgs"/> class.
-        /// </summary>
-        /// <param name="sliderValue">The slider value (range 0.0 - 1.0)</param>
-        public SliderChangedEventArgs(float sliderValue)
-        {
-            this.value = sliderValue;
-        }
-
-        /// <summary>
-        /// Gets the value.
-        /// </summary>
-        public float Value
-        {
-            get { return this.value; }
-        }
+      this.value = sliderValue;
     }
+
+    /// <summary>
+    /// Gets the value.
+    /// </summary>
+    public float Value
+    {
+      get { return this.value; }
+    }
+  }
 }

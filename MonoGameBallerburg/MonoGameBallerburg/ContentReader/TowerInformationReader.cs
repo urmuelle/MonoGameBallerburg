@@ -5,23 +5,23 @@
 
 namespace MonoGameBallerburg
 {
-    using Graphic;
-    using Microsoft.Xna.Framework.Content;
+  using Graphic;
+  using Microsoft.Xna.Framework.Content;
 
+  /// <summary>
+  /// Content Reader for the Content Pipeline Extension
+  /// </summary>
+  public class TowerInformationReader : ContentTypeReader<Tower>
+  {
     /// <summary>
-    /// Content Reader for the Content Pipeline Extension
+    /// Reads the specified input.
     /// </summary>
-    public class TowerInformationReader : ContentTypeReader<Tower>
+    /// <param name="input">The input.</param>
+    /// <param name="existingInstance">The existing instance.</param>
+    /// <returns>New Tower instance</returns>
+    protected override Tower Read(ContentReader input, Tower existingInstance)
     {
-        /// <summary>
-        /// Reads the specified input.
-        /// </summary>
-        /// <param name="input">The input.</param>
-        /// <param name="existingInstance">The existing instance.</param>
-        /// <returns>New Tower instance</returns>
-        protected override Tower Read(ContentReader input, Tower existingInstance)
-        {
-            return new Tower(input);
-        }
+      return new Tower(input);
     }
+  }
 }

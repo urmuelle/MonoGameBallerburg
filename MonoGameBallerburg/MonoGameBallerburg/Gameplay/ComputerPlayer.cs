@@ -5,13 +5,13 @@
 
 namespace MonoGameBallerburg.Gameplay
 {
-    using Graphic;
+  using Graphic;
 
-    public class ComputerPlayer : Player
+  public class ComputerPlayer : Player
+  {
+    public ComputerPlayer(Castle castle)
+      : base(castle)
     {
-        public ComputerPlayer(Castle castle)
-            : base(castle)
-        {
-        }
     }
+  }
 }
