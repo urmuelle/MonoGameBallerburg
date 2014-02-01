@@ -7,8 +7,11 @@ namespace MonoGameBallerburg.Audio
 {
   using System;
   using Gameplay;
+  using Manager;
   using Microsoft.Xna.Framework;
   using Microsoft.Xna.Framework.Audio;
+  using Microsoft.Xna.Framework.Media;
+  using MonoGame.Framework;
 
   /// <summary>
   /// Class used to handle music and effect sounds in the game
@@ -23,14 +26,16 @@ namespace MonoGameBallerburg.Audio
       private WaveBank backgroundMusicWaveBank;
       private Cue sound12;
     */
+    private ContentManager contentManager;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="AudioManager"/> class.
     /// </summary>
     /// <param name="settings">The settings.</param>        
-    public AudioManager(ApplicationSettings settings)
+    public AudioManager(ApplicationSettings settings, ContentManager content)
     {
       this.applicationSettings = settings;
+      this.contentManager = content;
       /*
         this.audioEngine = new AudioEngine(@"Content\Audio\Ballerburg.xgs");
         this.waveBank = new WaveBank(this.audioEngine, @"Content\Audio\BallerburgWaveBank.xwb");
@@ -51,6 +56,8 @@ namespace MonoGameBallerburg.Audio
         var defaultCategory = this.audioEngine.GetCategory("Menu");
        * */
       this.applicationSettings.MusicVolume = MathHelper.Clamp(volume + 0.01f, 0.0f, 2.0f);
+      
+      MediaPlayer.Volume = MathHelper.Clamp(volume + 0.01f, 0.0f, 1.0f);
       /*
         defaultCategory.SetVolume(this.applicationSettings.MusicVolume);
        * */
@@ -65,7 +72,7 @@ namespace MonoGameBallerburg.Audio
       /*
         var defaultCategory = this.audioEngine.GetCategory("Default");
        * */
-      this.applicationSettings.FxVolume = MathHelper.Clamp(volume + 0.01f, 0.0f, 2.0f);
+      applicationSettings.FxVolume = MathHelper.Clamp(volume + 0.01f, 0.0f, 2.0f);
       /*
         defaultCategory.SetVolume(this.applicationSettings.FxVolume);
        * */
@@ -96,19 +103,16 @@ namespace MonoGameBallerburg.Audio
     /// </summary>
     public void PlayMenuBackgroundMusic()
     {
-      /*
-        this.soundBank.PlayCue("Music" + (((int)this.applicationSettings.ActiveBackgroundMusicTrack) + 1).ToString());
-       * */
+      MediaPlayer.Play(contentManager.BackgroundMusicTracks[this.applicationSettings.ActiveBackgroundMusicTrack.ToString()]);
+      MediaPlayer.IsRepeating = true;
     }
 
     /// <summary>
-    /// Stops the menu backgorund sound.
+    /// Stops the menu background sound.
     /// </summary>
     public void StopMenuBackgroundMusic()
     {
-      /*
-        this.audioEngine.GetCategory("Menu").Stop(AudioStopOptions.Immediate);
-       * */
+      MediaPlayer.Stop();
     }
 
     /// <summary>

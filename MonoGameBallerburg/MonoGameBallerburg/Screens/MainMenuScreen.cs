@@ -130,6 +130,7 @@ namespace MonoGameBallerburg.Screens
     private void SpielStartenMenuEntrySelected(object sender, EventArgs e)
     {
       ScreenManager.AudioManager.PlayKlickSound();
+      ScreenManager.AudioManager.StopMenuBackgroundMusic();
       var gameScreen = new GameplayScreen(GraphicsManager);
       ScreenManager.AddScreen(gameScreen);
       ExitScreen();

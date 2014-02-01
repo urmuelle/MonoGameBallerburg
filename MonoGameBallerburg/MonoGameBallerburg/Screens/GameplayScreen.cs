@@ -19,13 +19,15 @@ namespace MonoGameBallerburg.Screens
   /// <summary>
   /// The game Screen and its logic
   /// TODO: Powder and start velocity
+  /// TODO: Fix Player Switch Bug  
   /// TODO: If cannon lost to change to, go to castle view
   /// TODO: If cannon destroyed, do a castle view move
-  /// TODO: HUD Update
   /// TODO: Game Over Screen
   /// TODO: KI Animation (move cannon)
-  /// TODO: Fix Alpha Blending
+  /// TODO: Collision camera - ground!
+  /// TODO: Resolution - choose, witch mode, adapt all screens, etc...
   /// TODO: Directional Light
+  /// TODO: Arcade Mode
   /// TODO: Daytime
   /// TODO: Season
   /// TODO: Weather

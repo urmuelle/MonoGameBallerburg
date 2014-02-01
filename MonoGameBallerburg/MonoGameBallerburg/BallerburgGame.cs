@@ -55,7 +55,7 @@ namespace MonoGameBallerburg
       graphicsManager = new BallerburgGraphicsManager();
       contentManager = new ContentManager();
       shaderManager = new ShaderManager();
-      audioManager = new AudioManager(applicationSettings);
+      audioManager = new AudioManager(applicationSettings, contentManager);
       gameObjectManager = new GameObjectManager(contentManager, this.audioManager, this.graphicsManager);
 
       MousePointer = new MousePointer(this)

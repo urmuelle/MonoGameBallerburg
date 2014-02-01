@@ -5,8 +5,11 @@
 
 namespace MonoGameBallerburg.Manager
 {
+  using System.Collections.Generic;
   using Graphic;
+  using Microsoft.Xna.Framework.Audio;
   using Microsoft.Xna.Framework.Graphics;
+  using Microsoft.Xna.Framework.Media;
   using XnaContentManager = Microsoft.Xna.Framework.Content.ContentManager;
 
   /// <summary>
@@ -187,6 +190,14 @@ namespace MonoGameBallerburg.Manager
     public Texture2D CannonBallTexture { get; private set; }
 
     /// <summary>
+    /// Gets the background music tracks.
+    /// </summary>
+    /// <value>
+    /// The background music tracks.
+    /// </value>
+    public Dictionary<string, Song> BackgroundMusicTracks { get; private set; }
+
+    /// <summary>
     /// Unloads the content.
     /// </summary>
     public void UnloadContent()
@@ -211,48 +222,55 @@ namespace MonoGameBallerburg.Manager
         return;
       }
 
-      this.content = xnaContent;
-      this.content.RootDirectory = "Content";
+      content = xnaContent;
+      content.RootDirectory = "Content";
 
-      this.MenuFont = this.content.Load<SpriteFont>("menufont");
-      this.DebugColorTexture = this.content.Load<Texture2D>("solidred");
-      this.BackgroundTexture = this.content.Load<Texture2D>("Pic2");
-      this.MenuTexture = this.content.Load<Texture2D>("Pic4");
-      this.GameFont = this.content.Load<SpriteFont>("gamefont");
-      this.SkyBox = this.content.Load<SkyBox>(@"Skybox\SkyBox");
-      this.GradientTexture = this.content.Load<Texture2D>("Pic3");
-      this.MousePointerTexture = this.content.Load<Texture2D>(@"Arrow3");
-      this.Castle1 = this.content.Load<Castle>(@"Castles\Castle1");
-      this.Castle1.Initialize(graphicsManager.GraphicsDevice);
-      this.Castle2 = this.content.Load<Castle>(@"Castles\Castle2");
-      this.Castle2.Initialize(graphicsManager.GraphicsDevice);
-      this.Castle3 = this.content.Load<Castle>(@"Castles\Castle3");
-      this.Castle3.Initialize(graphicsManager.GraphicsDevice);
-      this.Castle4 = this.content.Load<Castle>(@"Castles\Castle4");
-      this.Castle4.Initialize(graphicsManager.GraphicsDevice);
-      this.Castle5 = this.content.Load<Castle>(@"Castles\Castle5");
-      this.Castle5.Initialize(graphicsManager.GraphicsDevice);
-      this.Castle6 = this.content.Load<Castle>(@"Castles\Castle6");
-      this.Castle6.Initialize(graphicsManager.GraphicsDevice);
-      this.Castle7 = this.content.Load<Castle>(@"Castles\Castle7");
-      this.Castle7.Initialize(graphicsManager.GraphicsDevice);
-      this.Castle8 = this.content.Load<Castle>(@"Castles\Castle8");
-      this.Castle8.Initialize(graphicsManager.GraphicsDevice);
-      this.ExplosionFrame01 = this.content.Load<Texture2D>(@"Explosion\Explosion_Frame01");
-      this.ExplosionFrame02 = this.content.Load<Texture2D>(@"Explosion\Explosion_Frame02");
-      this.ExplosionFrame03 = this.content.Load<Texture2D>(@"Explosion\Explosion_Frame03");
-      this.ExplosionFrame04 = this.content.Load<Texture2D>(@"Explosion\Explosion_Frame04");
-      this.ExplosionFrame05 = this.content.Load<Texture2D>(@"Explosion\Explosion_Frame05");
-      this.ExplosionFrame06 = this.content.Load<Texture2D>(@"Explosion\Explosion_Frame06");
-      this.ExplosionFrame07 = this.content.Load<Texture2D>(@"Explosion\Explosion_Frame07");
-      this.ExplosionFrame08 = this.content.Load<Texture2D>(@"Explosion\Explosion_Frame08");
-      this.CannonTexture = this.content.Load<Texture2D>("Tex8");
-      this.KugelMesh = this.content.Load<Model>("SphereNew");
-      this.BlankTexture = this.content.Load<Texture2D>("blank");
-      this.WhiteTexture = this.content.Load<Texture2D>("WhiteRect");
-      this.TerrainTexture = this.content.Load<Texture2D>("Tex1");
-      this.CursorTexture = this.content.Load<Texture2D>(@"GUI\cursor");
-      this.CannonBallTexture = this.content.Load<Texture2D>(@"SphereFinal");
+      MenuFont = this.content.Load<SpriteFont>("menufont");
+      DebugColorTexture = this.content.Load<Texture2D>("solidred");
+      BackgroundTexture = this.content.Load<Texture2D>("Pic2");
+      MenuTexture = this.content.Load<Texture2D>("Pic4");
+      GameFont = this.content.Load<SpriteFont>("gamefont");
+      SkyBox = this.content.Load<SkyBox>(@"Skybox\SkyBox");
+      GradientTexture = this.content.Load<Texture2D>("Pic3");
+      MousePointerTexture = this.content.Load<Texture2D>(@"Arrow3");
+      Castle1 = this.content.Load<Castle>(@"Castles\Castle1");
+      Castle1.Initialize(graphicsManager.GraphicsDevice);
+      Castle2 = this.content.Load<Castle>(@"Castles\Castle2");
+      Castle2.Initialize(graphicsManager.GraphicsDevice);
+      Castle3 = this.content.Load<Castle>(@"Castles\Castle3");
+      Castle3.Initialize(graphicsManager.GraphicsDevice);
+      Castle4 = this.content.Load<Castle>(@"Castles\Castle4");
+      Castle4.Initialize(graphicsManager.GraphicsDevice);
+      Castle5 = this.content.Load<Castle>(@"Castles\Castle5");
+      Castle5.Initialize(graphicsManager.GraphicsDevice);
+      Castle6 = this.content.Load<Castle>(@"Castles\Castle6");
+      Castle6.Initialize(graphicsManager.GraphicsDevice);
+      Castle7 = this.content.Load<Castle>(@"Castles\Castle7");
+      Castle7.Initialize(graphicsManager.GraphicsDevice);
+      Castle8 = this.content.Load<Castle>(@"Castles\Castle8");
+      Castle8.Initialize(graphicsManager.GraphicsDevice);
+      ExplosionFrame01 = this.content.Load<Texture2D>(@"Explosion\Explosion_Frame01");
+      ExplosionFrame02 = this.content.Load<Texture2D>(@"Explosion\Explosion_Frame02");
+      ExplosionFrame03 = this.content.Load<Texture2D>(@"Explosion\Explosion_Frame03");
+      ExplosionFrame04 = this.content.Load<Texture2D>(@"Explosion\Explosion_Frame04");
+      ExplosionFrame05 = this.content.Load<Texture2D>(@"Explosion\Explosion_Frame05");
+      ExplosionFrame06 = this.content.Load<Texture2D>(@"Explosion\Explosion_Frame06");
+      ExplosionFrame07 = this.content.Load<Texture2D>(@"Explosion\Explosion_Frame07");
+      ExplosionFrame08 = this.content.Load<Texture2D>(@"Explosion\Explosion_Frame08");
+      CannonTexture = this.content.Load<Texture2D>("Tex8");
+      KugelMesh = this.content.Load<Model>("SphereNew");
+      BlankTexture = this.content.Load<Texture2D>("blank");
+      WhiteTexture = this.content.Load<Texture2D>("WhiteRect");
+      TerrainTexture = this.content.Load<Texture2D>("Tex1");
+      CursorTexture = this.content.Load<Texture2D>(@"GUI\cursor");
+      CannonBallTexture = this.content.Load<Texture2D>(@"SphereFinal");
+
+      BackgroundMusicTracks = new Dictionary<string, Song>();
+      BackgroundMusicTracks.Add("Darkstar", content.Load<Song>(@"Audio\Music1"));
+      BackgroundMusicTracks.Add("HighTension", content.Load<Song>(@"Audio\Music2"));
+      BackgroundMusicTracks.Add("Tentacle", content.Load<Song>(@"Audio\Music3"));
+      BackgroundMusicTracks.Add("DeathRow", content.Load<Song>(@"Audio\Music4"));
+      BackgroundMusicTracks.Add("Boomerang", content.Load<Song>(@"Audio\Music5"));
     }
 
     #endregion

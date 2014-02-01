@@ -114,6 +114,7 @@ namespace MonoGameBallerburg.Screens
 
         if (ScreenManager.ApplicationSettings.PlayMusic == false)
         {
+          musicVolumeSlider.State = States.Visible;
           ScreenManager.ApplicationSettings.PlayMusic = true;
           ScreenManager.AudioManager.PlayMenuBackgroundMusic();
         }

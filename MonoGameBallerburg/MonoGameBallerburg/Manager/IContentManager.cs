@@ -5,8 +5,11 @@
 
 namespace MonoGameBallerburg.Manager
 {
+  using System.Collections.Generic;
   using Graphic;
+  using Microsoft.Xna.Framework.Audio;
   using Microsoft.Xna.Framework.Graphics;
+  using Microsoft.Xna.Framework.Media;
   using XnaContentManager = Microsoft.Xna.Framework.Content.ContentManager;
 
   /// <summary>
@@ -79,6 +82,8 @@ namespace MonoGameBallerburg.Manager
     Texture2D CursorTexture { get; }
 
     Texture2D CannonBallTexture { get; }
+
+    Dictionary<string, Song> BackgroundMusicTracks { get; }
 
     void LoadContent(XnaContentManager xnaContent, IBallerburgGraphicsManager graphicsManager);
 
