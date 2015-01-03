@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoGameBallerburg", "MonoGameBallerburg\MonoGameBallerburg.csproj", "{18867FF2-397F-4CA8-A967-A1D4C0AC77A7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{75E4E2A0-2EC4-4F42-9554-664E3745DE00} = {75E4E2A0-2EC4-4F42-9554-664E3745DE00}
+		{E63661D1-E34F-4872-97B5-9AA633510D79} = {E63661D1-E34F-4872-97B5-9AA633510D79}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Castle Pipeline", "CastleProcessor\Castle Pipeline.csproj", "{E63661D1-E34F-4872-97B5-9AA633510D79}"
 EndProject

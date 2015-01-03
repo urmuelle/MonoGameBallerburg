@@ -7,9 +7,9 @@ namespace MonoGameBallerburg.Gameplay
 {
   using Graphic;
 
-  public class ComputerPlayer : Player
+  public class KiPlayer : Player
   {
-    public ComputerPlayer(Castle castle)
+    public KiPlayer(Castle castle)
       : base(castle)
     {
     }

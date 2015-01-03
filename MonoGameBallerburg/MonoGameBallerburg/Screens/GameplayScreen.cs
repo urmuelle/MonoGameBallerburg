@@ -99,7 +99,6 @@ namespace MonoGameBallerburg.Screens
 
     // Camera
     private Camera camera;
-    private bool enableRotation;
     private bool doCameraMove;
     private float cameraYaw;
     private float cameraPitch;
@@ -389,59 +388,6 @@ namespace MonoGameBallerburg.Screens
       ////this.content.Unload();
     }
 
-    /*
-    /// <summary>
-    /// Creates the WorldViewProjection matrix from the perspective of the 
-    /// light using the cameras bounding frustum to determine what is visible 
-    /// in the scene.
-    /// </summary>
-    /// <returns>The WorldViewProjection for the light</returns>
-    public Matrix CreateLightViewProjectionMatrix()
-    {
-        // Matrix with that will rotate in points the direction of the light
-        Matrix lightRotation = Matrix.CreateLookAt(Vector3.Zero,
-                                                   -lightDir,
-                                                   Vector3.Up);
-
-        // Get the corners of the frustum
-        Vector3[] frustumCorners = cameraFrustum.GetCorners();
-
-        // Transform the positions of the corners into the direction of the light
-        for (int i = 0; i < frustumCorners.Length; i++)
-        {
-            frustumCorners[i] = Vector3.Transform(frustumCorners[i], lightRotation);
-        }
-
-        // Find the smallest box around the points
-        BoundingBox lightBox = BoundingBox.CreateFromPoints(frustumCorners);
-
-        Vector3 boxSize = lightBox.Max - lightBox.Min;
-        Vector3 halfBoxSize = boxSize * 0.5f;
-
-        // The position of the light should be in the center of the back
-        // pannel of the box. 
-        Vector3 lightPosition = lightBox.Min + halfBoxSize;
-        lightPosition.Z = lightBox.Min.Z;
-
-        // We need the position back in world coordinates so we transform 
-        // the light position by the inverse of the lights rotation
-        lightPosition = Vector3.Transform(lightPosition,
-                                          Matrix.Invert(lightRotation));
-
-        // Create the view matrix for the light
-        Matrix lightView = Matrix.CreateLookAt(lightPosition,
-                                               lightPosition - lightDir,
-                                               Vector3.Up);
-
-        // Create the projection matrix for the light
-        // The projection is orthographic since we are using a directional light
-        Matrix lightProjection = Matrix.CreateOrthographic(boxSize.X, boxSize.Y,
-                                                           -boxSize.Z, boxSize.Z);
-
-        return lightView * lightProjection;
-    }
-    */
-
     /// <summary>
     /// Disables the input.
     /// </summary>
@@ -588,6 +534,7 @@ namespace MonoGameBallerburg.Screens
           EnableInput();
         }
 
+        // There is a camera animation going on
         if (doCameraMove)
         {
           if (camera.State == CameraState.Cannon)
@@ -614,18 +561,58 @@ namespace MonoGameBallerburg.Screens
           }
         }
 
-        if (Mouse.GetState().LeftButton == ButtonState.Pressed)
+        // Update all players controlled by the KI
+        if (ScreenManager.PlayerSettings[activePlayer].PlayerType == PlayerType.Computer)
         {
-          if (enableRotation == false)
+          // TODO: Move the cannon to accroding direction, aim, fire
+          if (ScreenManager.PlayerSettings[activePlayer].Castle.CurrentTower.HasCannon == true)
           {
-            enableRotation = true;
-          }
-        }
-        else if (Mouse.GetState().LeftButton == ButtonState.Released)
-        {
-          enableRotation = false;
-        }
+            // TODO: Select Tower with cannon
+            // TODO: Calculate the target (TODO: Have different strategies)
+            // TODO: Animate cannon movement - rotate
+            // TODO: Animate cannon movement - elevation
 
+            // Fire
+            // Subtract 1 cannonball
+            if (ScreenManager.PlayerSettings[activePlayer].CannonballType == CannonballType.Iron)
+            {
+              ScreenManager.PlayerSettings[activePlayer].Eisenkugeln -= 1;
+            }
+
+            if (ScreenManager.PlayerSettings[activePlayer].CannonballType == CannonballType.Stone)
+            {
+              ScreenManager.PlayerSettings[activePlayer].Steinkugel -= 1;
+            }
+
+            // Subtract Powder
+            ScreenManager.PlayerSettings[activePlayer].Powder -= ScreenManager.PlayerSettings[activePlayer].Castle.CurrentTower.TowerCannon.PowderLoad;
+
+            foreach (
+                var cannonBall in
+                    ScreenManager.GameObjectManager.ActiveCannonballs.Where(cannonBall => !cannonBall.Alive))
+            {
+              ScreenManager.AudioManager.PlayFireSound();
+              cannonBall.VelocityDirection =
+                  Vector3.Normalize(
+                      ScreenManager.PlayerSettings[activePlayer].Castle.CurrentTower.TowerCannon.TubeDirection);
+              cannonBall.Position = Vector3.Transform(
+                  ScreenManager.PlayerSettings[activePlayer].Castle.CurrentTower.TowerCannon.BulletStartPosition,
+                  Matrix.CreateTranslation(ScreenManager.PlayerSettings[activePlayer].Castle.StartPos));
+              cannonBall.Alive = true;
+              break;
+            }
+          }
+
+          // Switch the player
+          activePlayer = activePlayer + 1;
+
+          if (activePlayer == ScreenManager.GameSettings.NumPlayers)
+          {
+            activePlayer = 0;
+          }
+        }        
+
+        // Update all game objects currently in scene
         ScreenManager.GameObjectManager.Update(gameTime);
 
         CheckForCollision();
@@ -1499,39 +1486,42 @@ namespace MonoGameBallerburg.Screens
         activePlayer = 0;
       }
 
-      camera.State = ScreenManager.PlayerSettings[activePlayer].CurrentCameraState;
-
-      if (camera.State == CameraState.CastleView)
+      if (ScreenManager.PlayerSettings[activePlayer].PlayerType == PlayerType.Human)
       {
-        SetCastleCameraButtonStateAndView();
-        /*
-        SetCastleCameraButtonStateAndView();
-        camera.Position = Vector3.Transform(
-            BallerburgGame.PlayerSettings[activePlayer].Castle.CameraPosition,
-            Matrix.CreateTranslation(BallerburgGame.PlayerSettings[activePlayer].Castle.StartPos));
+        camera.State = ScreenManager.PlayerSettings[activePlayer].CurrentCameraState;
 
-        camera.ViewDirection = BallerburgGame.PlayerSettings[activePlayer].Castle.StartPos;
-
-        // Force drawing with new positions
-        camera.UpdateCamera(camera.Position, 0.0f, 0.0f);
-         * */
-      }
-      else if (camera.State == CameraState.Tower)
-      {
-        SetTowerCameraButtonStatesAndView();
-      }
-      else if (camera.State == CameraState.Cannon)
-      {
-        // Cannon has not been destroyed in other players turn? If yes
-        // set the tower view
-        if (ScreenManager.PlayerSettings[activePlayer].Castle.CurrentTower.HasCannon)
+        if (camera.State == CameraState.CastleView)
         {
-          SetCannonCameraButtonStatesAndView();
+          SetCastleCameraButtonStateAndView();
+          /*
+          SetCastleCameraButtonStateAndView();
+          camera.Position = Vector3.Transform(
+              BallerburgGame.PlayerSettings[activePlayer].Castle.CameraPosition,
+              Matrix.CreateTranslation(BallerburgGame.PlayerSettings[activePlayer].Castle.StartPos));
+
+          camera.ViewDirection = BallerburgGame.PlayerSettings[activePlayer].Castle.StartPos;
+
+          // Force drawing with new positions
+          camera.UpdateCamera(camera.Position, 0.0f, 0.0f);
+           * */
         }
-        else
+        else if (camera.State == CameraState.Tower)
         {
-          ScreenManager.PlayerSettings[activePlayer].CurrentCameraState = CameraState.Tower;
           SetTowerCameraButtonStatesAndView();
+        }
+        else if (camera.State == CameraState.Cannon)
+        {
+          // Cannon has not been destroyed in other players turn? If yes
+          // set the tower view
+          if (ScreenManager.PlayerSettings[activePlayer].Castle.CurrentTower.HasCannon)
+          {
+            SetCannonCameraButtonStatesAndView();
+          }
+          else
+          {
+            ScreenManager.PlayerSettings[activePlayer].CurrentCameraState = CameraState.Tower;
+            SetTowerCameraButtonStatesAndView();
+          }
         }
       }
     }

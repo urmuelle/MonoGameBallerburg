@@ -156,7 +156,7 @@
     <Compile Include="Gameplay\ApplicationSettings.cs" />
     <Compile Include="Gameplay\CannonSettings.cs" />
     <Compile Include="Gameplay\CastleSettings.cs" />
-    <Compile Include="Gameplay\ComputerPlayer.cs" />
+    <Compile Include="Gameplay\KiPlayer.cs" />
     <Compile Include="Gameplay\Constants.cs" />
     <Compile Include="Gameplay\GameplayService.cs" />
     <Compile Include="Gameplay\GameSettings.cs" />
