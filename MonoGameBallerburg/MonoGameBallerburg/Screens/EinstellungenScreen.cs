@@ -49,7 +49,7 @@ namespace MonoGameBallerburg.Screens
     {
       playerId = currentPlayerId;
 
-      lblInventar = new GamePlayMenuLabel(this, 0, graphicsManager) { Text = string.Format("{0}:", ResourceLoader.GetString("InventoryText")), Position = new Vector2(20, 70) };
+      lblInventar = new GamePlayMenuLabel(this, 0, graphicsManager) { Text = string.Format("{0}:", "Inventar"), Position = new Vector2(20, 70) };
       lblBevoelkerung = new GamePlayMenuLabel(this, 0, graphicsManager) { Text = "Bevölkerung:", Position = new Vector2(20, 170) };
       lblVerzinsung = new GamePlayMenuLabel(this, 0, graphicsManager) { Text = "Verzinsung:", Position = new Vector2(20, 220) };
       lblKaufen = new GamePlayMenuLabel(this, 0, graphicsManager) { Text = "Kaufen:", Position = new Vector2(20, 310) };
@@ -72,7 +72,7 @@ namespace MonoGameBallerburg.Screens
       lblZinssatz = new GamePlayMenuLabel(this, 0, graphicsManager) { Text = string.Format("{0}%", screenManager.PlayerSettings[playerId].Verzinsung), Position = new Vector2(340, 260) };
 
       // Kaufbuttons
-      atbCannon = new ActionToggleButton(this, ResourceLoader.GetString("CannonText"), "4000$", 0) { Position = new Vector2(220, 310) };
+      atbCannon = new ActionToggleButton(this, "Kanone", "4000$", 0) { Position = new Vector2(220, 310) };
       atbCannon.Selected += delegate
                                 {
                                   screenManager.AudioManager.PlayKlickSound();
@@ -80,21 +80,21 @@ namespace MonoGameBallerburg.Screens
                                   screenManager.PlayerSettings[playerId].AddCannon();
                                 };
 
-      atbPulver = new ActionToggleButton(this, ResourceLoader.GetString("PowderBuyText"), "1000$", 0) { Position = new Vector2(420, 310) };
+      atbPulver = new ActionToggleButton(this, "1000g Pulver", "1000$", 0) { Position = new Vector2(420, 310) };
       atbPulver.Selected += delegate
                                 {
                                   screenManager.AudioManager.PlayKlickSound();
                                   screenManager.PlayerSettings[playerId].Money -= 1000;
                                   screenManager.PlayerSettings[playerId].AddPowder();
                                 };
-      atbEisenkugel = new ActionToggleButton(this, ResourceLoader.GetString("IronBallText"), "1000$", 0) { Position = new Vector2(420, 360) };
+      atbEisenkugel = new ActionToggleButton(this, "Eisenkugel", "1000$", 0) { Position = new Vector2(420, 360) };
       atbEisenkugel.Selected += delegate
                                     {
                                       screenManager.AudioManager.PlayKlickSound();
                                       screenManager.PlayerSettings[playerId].Money -= 1000;
                                       screenManager.PlayerSettings[playerId].AddIronBall();
                                     };
-      atbSteinkugel = new ActionToggleButton(this, ResourceLoader.GetString("StoneBallText"), "250$", 0) { Position = new Vector2(220, 360) };
+      atbSteinkugel = new ActionToggleButton(this, "Steinkugel", "250$", 0) { Position = new Vector2(220, 360) };
       atbSteinkugel.Selected += delegate
                                     {
                                       screenManager.AudioManager.PlayKlickSound();

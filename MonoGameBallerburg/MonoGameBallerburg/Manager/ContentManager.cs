@@ -198,6 +198,14 @@ namespace MonoGameBallerburg.Manager
     public Dictionary<string, Song> BackgroundMusicTracks { get; private set; }
 
     /// <summary>
+    /// Gets the sound effects.
+    /// </summary>
+    /// <value>
+    /// The sound effects.
+    /// </value>
+    public Dictionary<string, SoundEffect> SoundEffects { get; private set; }
+
+    /// <summary>
     /// Unloads the content.
     /// </summary>
     public void UnloadContent()
@@ -265,12 +273,24 @@ namespace MonoGameBallerburg.Manager
       CursorTexture = this.content.Load<Texture2D>(@"GUI\cursor");
       CannonBallTexture = this.content.Load<Texture2D>(@"SphereFinal");
 
-      BackgroundMusicTracks = new Dictionary<string, Song>();
-      BackgroundMusicTracks.Add("Darkstar", content.Load<Song>(@"Audio\Music1"));
-      BackgroundMusicTracks.Add("HighTension", content.Load<Song>(@"Audio\Music2"));
-      BackgroundMusicTracks.Add("Tentacle", content.Load<Song>(@"Audio\Music3"));
-      BackgroundMusicTracks.Add("DeathRow", content.Load<Song>(@"Audio\Music4"));
-      BackgroundMusicTracks.Add("Boomerang", content.Load<Song>(@"Audio\Music5"));
+      BackgroundMusicTracks = new Dictionary<string, Song>
+      {
+        { "Darkstar", content.Load<Song>(@"Audio\Music1") },
+        { "HighTension", content.Load<Song>(@"Audio\Music2") },
+        { "Tentacle", content.Load<Song>(@"Audio\Music3") },
+        { "DeathRow", content.Load<Song>(@"Audio\Music4") },
+        { "Boomerang", content.Load<Song>(@"Audio\Music5") }
+      };
+
+      SoundEffects = new Dictionary<string, SoundEffect>
+      {
+        { "KlickSound", content.Load<SoundEffect>(@"Audio\Sound1") },
+        { "ExplosionSound", content.Load<SoundEffect>(@"Audio\Sound7") },
+        { "TubeMoveSound", content.Load<SoundEffect>(@"Audio\Sound9") },
+        { "HitSound", content.Load<SoundEffect>(@"Audio\Sound9") },
+        { "ShootSound", content.Load<SoundEffect>(@"Audio\Sound10") },
+        { "CannonRotateSound", content.Load<SoundEffect>(@"Audio\Sound12") }
+      };
     }
 
     #endregion

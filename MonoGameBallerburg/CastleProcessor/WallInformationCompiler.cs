@@ -24,7 +24,7 @@ namespace CastleProcessor
         /// <returns>A string with the runtime type information</returns>
         public override string GetRuntimeReader(TargetPlatform targetPlatform)
         {            
-            return "Ballerburg.WallInformationReader, Ballerburg, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null";
+            return "MonoGameBallerburg.WallInformationReader, MonoGameBallerburg, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null";
         }
 
         /// <summary>
@@ -34,7 +34,7 @@ namespace CastleProcessor
         /// <returns>string with the runtime type information</returns>
         public override string GetRuntimeType(TargetPlatform targetPlatform)
         {
-            return "Ballerburg.Graphic.Wall, Ballerburg, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null";
+            return "MonoGameBallerburg.Graphic.Wall, MonoGameBallerburg, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null";
         }
 
         /// <summary>

@@ -59,7 +59,7 @@ namespace MonoGameBallerburg.Screens
       this.playerSettings = playerSettings;
 
       // Zurück button
-      zurueckMenuEntry = new MenuEntry(this, ResourceLoader.GetString("BackText"), 0) { Position = new Vector2(500, 450) };
+      zurueckMenuEntry = new MenuEntry(this, "Zurück", 0) { Position = new Vector2(500, 450) };
       zurueckMenuEntry.Selected += ZurueckMenuEntrySelected;
 
       castleType = screenManager.PlayerSettings[spielerNr - 1].Castle.CastleType;

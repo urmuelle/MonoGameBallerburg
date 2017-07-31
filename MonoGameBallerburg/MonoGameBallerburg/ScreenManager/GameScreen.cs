@@ -64,7 +64,7 @@ namespace MonoGameBallerburg
     private IBallerburgGraphicsManager graphicsManager;
     private Collection<Control> controls;
 
-    private Windows.ApplicationModel.Resources.ResourceLoader resourceLoader;
+    //private Windows.ApplicationModel.Resources.ResourceLoader resourceLoader;
 
     #endregion
 
@@ -77,7 +77,7 @@ namespace MonoGameBallerburg
       this.graphicsManager = graphicsManager;
 
       controls = new Collection<Control>();
-      resourceLoader = new Windows.ApplicationModel.Resources.ResourceLoader();
+      //resourceLoader = new Windows.ApplicationModel.Resources.ResourceLoader();
       ////Viewport viewport = this.GraphicsManager.GraphicsDevice.Viewport;
     }
 
@@ -221,10 +221,12 @@ namespace MonoGameBallerburg
       get { return controls; }
     }
 
+    /*
     public Windows.ApplicationModel.Resources.ResourceLoader ResourceLoader
     {
       get { return this.resourceLoader; }
     }
+    */
 
     #endregion
 

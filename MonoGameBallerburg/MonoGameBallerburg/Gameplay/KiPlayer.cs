@@ -1,4 +1,4 @@
-﻿// <copyright file="ComputerPlayer.cs" company="Urs Müller">
+﻿// <copyright file="KiPlayer.cs" company="Urs Müller">
 //     Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>

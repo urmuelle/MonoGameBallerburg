@@ -9,7 +9,6 @@ namespace CastleProcessor
     using System.Xml;
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Content.Pipeline;
-    using Microsoft.Xna.Framework.Design;
 
     /// <summary>
     /// This class will be instantiated by the XNA Framework Content Pipeline
@@ -52,7 +51,6 @@ namespace CastleProcessor
         /// <param name="node">The node.</param>
         protected virtual void ReadXmlNode(CastleContent content, XmlNode node)
         {
-            Vector3Converter vector3Converter = new Vector3Converter();
             SingleConverter floatConverter = new SingleConverter();
             BooleanConverter boolConverter = new BooleanConverter();
             StringConverter stringConverter = new StringConverter();
@@ -104,16 +102,15 @@ namespace CastleProcessor
         /// <param name="node">The node.</param>
         protected virtual void ReadTowerNode(CastleContent.TowerInformation info, XmlNode node)
         {
-            ColorConverter colorConverter = new ColorConverter();
-            Vector3Converter vector3Converter = new Vector3Converter();
-            Vector2Converter vector2Converter = new Vector2Converter();
             SingleConverter floatConverter = new SingleConverter();
             Int32Converter integerConverter = new Int32Converter();            
 
             switch (node.Name.ToLower())
             {
                 case "position":
-                    info.Center = (Vector2)vector2Converter.ConvertFromInvariantString(node.Attributes.GetNamedItem("x").InnerText + ", " + node.Attributes.GetNamedItem("y").InnerText);
+                    var x = (int)integerConverter.ConvertFrom(node.Attributes.GetNamedItem("x").InnerText);
+                    var y = (int)integerConverter.ConvertFrom(node.Attributes.GetNamedItem("y").InnerText);
+                    info.Center = new Vector2(x, y);
                     break;
 
                 case "height":

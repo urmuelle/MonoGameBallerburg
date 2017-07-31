@@ -28,6 +28,8 @@ namespace MonoGameBallerburg.Audio
     */
     private ContentManager contentManager;
 
+    private SoundEffectInstance rotateSound;
+
     /// <summary>
     /// Initializes a new instance of the <see cref="AudioManager"/> class.
     /// </summary>
@@ -57,7 +59,7 @@ namespace MonoGameBallerburg.Audio
        * */
       this.applicationSettings.MusicVolume = MathHelper.Clamp(volume + 0.01f, 0.0f, 2.0f);
       
-      MediaPlayer.Volume = MathHelper.Clamp(volume + 0.01f, 0.0f, 1.0f);
+      MediaPlayer.Volume = MathHelper.Clamp(volume + 0.01f, 0.0f, 1.0f);      
       /*
         defaultCategory.SetVolume(this.applicationSettings.MusicVolume);
        * */
@@ -73,6 +75,7 @@ namespace MonoGameBallerburg.Audio
         var defaultCategory = this.audioEngine.GetCategory("Default");
        * */
       applicationSettings.FxVolume = MathHelper.Clamp(volume + 0.01f, 0.0f, 2.0f);
+      SoundEffect.MasterVolume = MathHelper.Clamp(volume + 0.01f, 0.0f, 1.0f);
       /*
         defaultCategory.SetVolume(this.applicationSettings.FxVolume);
        * */
@@ -93,9 +96,7 @@ namespace MonoGameBallerburg.Audio
     /// </summary>
     public void PlayKlickSound()
     {
-      /*
-        this.soundBank.PlayCue("Sound1");
-       * */
+      contentManager.SoundEffects["KlickSound"].Play();
     }
 
     /// <summary>
@@ -130,6 +131,7 @@ namespace MonoGameBallerburg.Audio
     /// </summary>
     public void PlayFireSound()
     {
+      contentManager.SoundEffects["ShootSound"].Play();
       /*
         this.soundBank.PlayCue("Sound10");
        * */
@@ -140,6 +142,7 @@ namespace MonoGameBallerburg.Audio
     /// </summary>
     public void PlayHitSound()
     {
+      contentManager.SoundEffects["HitSound"].Play();
       /*
         this.soundBank.PlayCue("Sound9");
        * */
@@ -150,6 +153,9 @@ namespace MonoGameBallerburg.Audio
     /// </summary>
     public void PlayCannonRotateSound()
     {
+      rotateSound = contentManager.SoundEffects["CannonRotateSound"].CreateInstance();
+      rotateSound.IsLooped=true;
+      rotateSound.Play();
       /*
         this.sound12 = this.soundBank.GetCue("Sound12");          
         this.sound12.Play();
@@ -161,6 +167,8 @@ namespace MonoGameBallerburg.Audio
     /// </summary>
     public void StopCannonRotateSound()
     {
+      rotateSound.Stop();
+           //contentManager.SoundEffects["CannonRotateSound"].Play()
       /*
         if (this.sound12 != null)
         {
@@ -174,6 +182,7 @@ namespace MonoGameBallerburg.Audio
     /// </summary>
     public void PlayTubeMoveSound()
     {
+      contentManager.SoundEffects["TubeMoveSound"].Play();
       /*
         this.soundBank.PlayCue("Sound9");
        * */
@@ -184,6 +193,7 @@ namespace MonoGameBallerburg.Audio
     /// </summary>
     public void PlayExplosionSound()
     {
+      contentManager.SoundEffects["ExplosionSound"].Play();
       /*
         this.soundBank.PlayCue("Sound7");
        * */

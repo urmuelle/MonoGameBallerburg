@@ -27,7 +27,7 @@ namespace CastleProcessor
         {
             // TODO: change this to the name of your ContentTypeReader
             // class which will be used to load this data.
-            return "Ballerburg.CastleContentReader, Ballerburg, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null";
+            return "MonoGameBallerburg.CastleContentReader, MonoGameBallerburg, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null";
         }
 
         /// <summary>
@@ -37,7 +37,7 @@ namespace CastleProcessor
         /// <returns>the type string</returns>
         public override string GetRuntimeType(TargetPlatform targetPlatform)
         {
-            return "Ballerburg.Graphic.Castle, Ballerburg, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null";
+            return "MonoGameBallerburg.Graphic.Castle, MonoGameBallerburg, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null";
         }
 
         /// <summary>

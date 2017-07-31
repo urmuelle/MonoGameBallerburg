@@ -1,24 +1,22 @@
-﻿// <copyright file="Program.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
-// </copyright>
-// <author>Urs Müller</author>
+﻿using System;
 
 namespace MonoGameBallerburg
 {
-  using System;
-
-  /// <summary>
-  /// The main class.
-  /// </summary>
-  public static class Program
-  {
+#if WINDOWS || LINUX
     /// <summary>
-    /// The main entry point for the application.
+    /// The main class.
     /// </summary>
-    public static void Main()
+    public static class Program
     {
-      var factory = new MonoGame.Framework.GameFrameworkViewSource<BallerburgGame>();
-      Windows.ApplicationModel.Core.CoreApplication.Run(factory);
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
+        [STAThread]
+        static void Main()
+        {
+            using (var game = new BallerburgGame())
+                game.Run();
+        }
     }
-  }
+#endif
 }

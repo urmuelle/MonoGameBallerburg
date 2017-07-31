@@ -31,7 +31,7 @@ namespace MonoGameBallerburg.Screens
       : base(graphicManager)
     {
       this.playerSettings = playerSettings;
-      zurueckMenuEntry = new MenuEntry(this, ResourceLoader.GetString("BackText"), 1) { Position = new Vector2(360, 360) };
+      zurueckMenuEntry = new MenuEntry(this, "Zurück", 1) { Position = new Vector2(360, 360) };
       zurueckMenuEntry.Selected += ZurueckExitMessageBoxAccepted;
 
       textBox = new TextBox(this, true)
@@ -90,7 +90,7 @@ namespace MonoGameBallerburg.Screens
       var backgroundRectangle = new Rectangle(160, 90, 320, 300);
 
       // Fade the popup alpha during transitions.
-      var color = new Color(255, 255, 255, TransitionAlpha);
+      var color = new Color((byte)255, (byte)255, (byte)255, TransitionAlpha);
 
       spriteBatch.Begin();
 

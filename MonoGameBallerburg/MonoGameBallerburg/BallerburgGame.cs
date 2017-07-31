@@ -126,7 +126,7 @@ namespace MonoGameBallerburg
       // Allows the game to exit
       if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
       {
-        Exit();
+        //Exit();
       }
 
       this.audioManager.Update();

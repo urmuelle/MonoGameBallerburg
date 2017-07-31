@@ -34,8 +34,10 @@ namespace SkyBoxProcessor
       this.CreateVertexData(vertices);
       content.Vertices = vertices;
 
-      var parameters = new OpaqueDataDictionary();
-      parameters.Add("GenerateMipmaps", true);
+      var parameters = new OpaqueDataDictionary
+      {
+        { "GenerateMipmaps", true }
+      };
 
       // Verweise auf Texturen erstellen
       if (!string.IsNullOrEmpty(content.Front))
@@ -79,7 +81,7 @@ namespace SkyBoxProcessor
 
     /// <summary>
     /// Definiert die Vertices der sechs Seiten des Quaders "per Hand". Als Primitiven-Typ
-    /// wird eine Dreiecksliste fungieren, weshalb pro Seite seches Vertices benötigt werden.
+    /// wird eine Dreiecksliste fungieren, weshalb pro Seite sechs Vertices benötigt werden.
     /// </summary>
     /// <param name="vertices">The vertices.</param>
     protected virtual void CreateVertexData(VertexPositionTexture[] vertices)

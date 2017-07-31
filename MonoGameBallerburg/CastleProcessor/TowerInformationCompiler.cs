@@ -28,7 +28,7 @@ namespace CastleProcessor
         public override string GetRuntimeReader(TargetPlatform targetPlatform)
         {
             // class which will be used to load this data.
-            return "Ballerburg.TowerInformationReader, Ballerburg, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null";
+            return "MonoGameBallerburg.TowerInformationReader, MonoGameBallerburg, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null";
         }
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace CastleProcessor
         /// <returns>string with the runtime type information.</returns>
         public override string GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform targetPlatform)
         {
-            return "Ballerburg.Graphic.Tower, Ballerburg, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null";
+            return "MonoGameBallerburg.Graphic.Tower, MonoGameBallerburg, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null";
         }
 
         /// <summary>

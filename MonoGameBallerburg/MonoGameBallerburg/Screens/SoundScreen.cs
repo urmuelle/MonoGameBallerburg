@@ -32,7 +32,7 @@ namespace MonoGameBallerburg.Screens
       : base(graphicsManager, screenManager, "Ballerburg3D")
     {
       // Zurück button
-      zurueckMenuEntry = new MenuEntry(this, ResourceLoader.GetString("BackText"), 0) { Position = new Vector2(500, 450) };
+      zurueckMenuEntry = new MenuEntry(this, "Zurück", 0) { Position = new Vector2(500, 450) };
       zurueckMenuEntry.Selected += ZurueckMenuEntrySelected;
 
       musicVolumeSlider = new HSlider(this, new Rectangle(250, 100, 300, 20), screenManager.ApplicationSettings.MusicVolume);

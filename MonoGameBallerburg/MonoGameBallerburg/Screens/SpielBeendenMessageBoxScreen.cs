@@ -114,7 +114,7 @@ namespace MonoGameBallerburg.Screens
       var backgroundRectangle = new Rectangle(160, 90, 320, 300);
 
       // Fade the popup alpha during transitions.
-      var color = new Color(255, 255, 255, TransitionAlpha);
+      var color = new Color((byte)255, (byte)255, (byte)255, TransitionAlpha);
 
       spriteBatch.Begin();
 
@@ -191,7 +191,7 @@ namespace MonoGameBallerburg.Screens
     private void BeendenMenuEntrySelected(object sender, EventArgs e)
     {
       ScreenManager.AudioManager.PlayKlickSound();
-      BallerburgGame.Instance.Exit();
+      //BallerburgGame.Instance.Exit();
     }
   }
 }

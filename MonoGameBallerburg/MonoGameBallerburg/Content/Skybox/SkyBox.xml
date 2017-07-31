@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<skybox>    
+    <!-- Kamera schaut entlang der negativen Z-Achse -->
+    <front>Skybox\Skybox_Front.bmp</front>
+
+    <!-- Kamera schaut entlang der positiven Z-Achse -->
+    <back>Skybox\Skybox_Back.bmp</back>
+
+    <!-- Kamera schaut entlang der negativen X-Achse -->
+    <left>Skybox\Skybox_Left.bmp</left>
+
+    <!-- Kamera schaut entlang der positiven X-Achse -->
+    <right>Skybox\Skybox_Right.bmp</right>
+
+    <!-- Kamera schaut entlang der positiven Y-Achse -->
+    <top>Skybox\Skybox_Top.bmp</top>
+
+    <!-- Kamera schaut entlang der negativen Y-Achse -->
+    <bottom></bottom>
+</skybox>

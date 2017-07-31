@@ -38,10 +38,10 @@ namespace MonoGameBallerburg.Screens
     public YesNoMessageBoxScreen(IBallerburgGraphicsManager graphicsManager, string boxTitle, string message)
       : base(graphicsManager)
     {
-      jaMenuEntry = new MenuEntry(this, ResourceLoader.GetString("YesText"), 0) { Position = new Vector2(320, 360) };
+      jaMenuEntry = new MenuEntry(this, "Ja", 0) { Position = new Vector2(320, 360) };
       jaMenuEntry.Selected += ConfirmExitMessageBoxAccepted;
 
-      neinMenuEntry = new MenuEntry(this, ResourceLoader.GetString("NoText"), 1) { Position = new Vector2(380, 360) };
+      neinMenuEntry = new MenuEntry(this, "Nein", 1) { Position = new Vector2(380, 360) };
       neinMenuEntry.Selected += CancelExitMessageBoxAccepted;
 
       ControlsContainer.Add(jaMenuEntry);
@@ -181,7 +181,7 @@ namespace MonoGameBallerburg.Screens
       var backgroundRectangle = new Rectangle(160, 90, 320, 300);
 
       // Fade the popup alpha during transitions.
-      var color = new Color(255, 255, 255, TransitionAlpha);
+      var color = new Color((byte)255, (byte)255, (byte)255, TransitionAlpha);
 
       spriteBatch.Begin();
 
@@ -260,7 +260,7 @@ namespace MonoGameBallerburg.Screens
     /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
     private void ConfirmExitMessageBoxAccepted(object sender, EventArgs e)
     {
-      BallerburgGame.Instance.Exit();
+      ///BallerburgGame.Instance.Exit();
     }
 
     /// <summary>
