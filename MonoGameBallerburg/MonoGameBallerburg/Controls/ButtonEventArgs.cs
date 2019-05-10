@@ -1,5 +1,5 @@
 ﻿// <copyright file="ButtonEventArgs.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
@@ -8,7 +8,7 @@ namespace MonoGameBallerburg.Controls
   using System;
 
   /// <summary>
-  /// Event Args for GamePlay Menu screen buttons
+  /// Event Args for GamePlay Menu screen buttons.
   /// </summary>
   public class ButtonEventArgs : EventArgs
   {

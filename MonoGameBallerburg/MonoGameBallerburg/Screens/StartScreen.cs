@@ -1,5 +1,5 @@
 ﻿// <copyright file="StartScreen.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
@@ -7,12 +7,12 @@ namespace MonoGameBallerburg.Screens
 {
   using System;
   using System.Globalization;
-  using Controls;
-  using Manager;
   using Microsoft.Xna.Framework;
+  using MonoGameBallerburg.Controls;
+  using MonoGameBallerburg.Manager;
 
   /// <summary>
-  /// The game's Start Screen
+  /// The game's Start Screen.
   /// </summary>
   public class StartScreen : MenuScreen
   {
@@ -60,7 +60,7 @@ namespace MonoGameBallerburg.Screens
 
     /// <summary>
     /// When the user presses this button, we go on to the messagebox screen
-    /// asking for the gamestyle he wants to play
+    /// asking for the gamestyle he wants to play.
     /// </summary>
     /// <param name="sender">The sender.</param>
     /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
@@ -91,7 +91,7 @@ namespace MonoGameBallerburg.Screens
         ScreenManager.PlayerSettings[i] = new Gameplay.PlayerSettings
                                                {
                                                  PlayerName = string.Format("Spieler {0}", (i + 1).ToString(CultureInfo.InvariantCulture)),
-                                                 PlayerType = Gameplay.PlayerType.Human
+                                                 PlayerType = Gameplay.PlayerType.Human,
                                                };
         ScreenManager.PlayerSettings[i].Castle.CastleType = 1;
       }
@@ -105,7 +105,7 @@ namespace MonoGameBallerburg.Screens
 
     /// <summary>
     /// When the user presses this button, we go on to the screen for
-    /// the network connection
+    /// the network connection.
     /// </summary>
     /// <param name="sender">The sender.</param>
     /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
@@ -122,7 +122,7 @@ namespace MonoGameBallerburg.Screens
     /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
     private void ConfirmExitMessageBoxAccepted(object sender, EventArgs e)
     {
-      ///BallerburgGame.Instance.Exit();
+      ////BallerburgGame.Instance.Exit();
     }
   }
 }

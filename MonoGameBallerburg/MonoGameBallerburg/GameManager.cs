@@ -1,5 +1,5 @@
 ﻿// <copyright file="GameManager.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 

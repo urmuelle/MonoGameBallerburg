@@ -1,5 +1,5 @@
 ﻿// <copyright file="Castle.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
@@ -16,7 +16,7 @@ namespace MonoGameBallerburg.Graphic
   using MonoGameBallerburg.Manager;
 
   /// <summary>
-  /// Class used to draw a castle
+  /// Class used to draw a castle.
   /// </summary>
   public class Castle
   {
@@ -57,7 +57,7 @@ namespace MonoGameBallerburg.Graphic
     /// <summary>
     /// Initializes a new instance of the <see cref="Castle"/> class.
     /// </summary>
-    /// <param name="reader">The castle content reader</param>
+    /// <param name="reader">The castle content reader.</param>
     public Castle(ContentReader reader)
     {
       this.id = 0;
@@ -100,7 +100,7 @@ namespace MonoGameBallerburg.Graphic
 
     /// <summary>
     /// Gets the towers.
-    /// </summary>        
+    /// </summary>
     public Collection<Tower> Towers
     {
       get { return this.towers; }
@@ -169,9 +169,9 @@ namespace MonoGameBallerburg.Graphic
     /// <summary>
     /// Sets the castle's current Tower to the given tower number.
     /// If the tower number is greater than the amount of Towers
-    /// an ArgumentException is thrown. Tower count starts with 0!
+    /// an ArgumentException is thrown. Tower count starts with 0!.
     /// </summary>
-    /// <param name="towerNum">The number (i.e. the index) of the tower</param>
+    /// <param name="towerNum">The number (i.e. the index) of the tower.</param>
     public void SelectTower(int towerNum)
     {
       this.currentTower = towerNum;
@@ -216,8 +216,8 @@ namespace MonoGameBallerburg.Graphic
     /// Draws the castle.
     /// </summary>
     /// <param name="world">The world.</param>
-    /// <param name="viewMatrix">The view matrix</param>
-    /// <param name="projectionMatrix">The projection Matrix</param>
+    /// <param name="viewMatrix">The view matrix.</param>
+    /// <param name="projectionMatrix">The projection Matrix.</param>
     /// <param name="lightView">The light view.</param>
     /// <param name="shaderEffect">The shader effect.</param>
     /// <param name="contentManager">The content manager.</param>
@@ -239,8 +239,8 @@ namespace MonoGameBallerburg.Graphic
     /// Draws the castle.
     /// </summary>
     /// <param name="world">The world.</param>
-    /// <param name="viewMatrix">The view matrix</param>
-    /// <param name="projectionMatrix">The projection Matrix</param>
+    /// <param name="viewMatrix">The view matrix.</param>
+    /// <param name="projectionMatrix">The projection Matrix.</param>
     /// <param name="lightView">The light view.</param>
     /// <param name="shaderEffect">The shader effect.</param>
     /// <param name="contentManager">The content manager.</param>

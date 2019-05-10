@@ -1,5 +1,5 @@
 // <copyright file="GameScreen.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
@@ -8,9 +8,9 @@ namespace MonoGameBallerburg
   using System;
   using System.Collections.ObjectModel;
   using System.Diagnostics.CodeAnalysis;
-  using Controls;
-  using Manager;
   using Microsoft.Xna.Framework;
+  using MonoGameBallerburg.Controls;
+  using MonoGameBallerburg.Manager;
 
   /// <summary>
   /// Enum describes the screen transition state.
@@ -64,7 +64,7 @@ namespace MonoGameBallerburg
     private IBallerburgGraphicsManager graphicsManager;
     private Collection<Control> controls;
 
-    //private Windows.ApplicationModel.Resources.ResourceLoader resourceLoader;
+    ////private Windows.ApplicationModel.Resources.ResourceLoader resourceLoader;
 
     #endregion
 
@@ -77,7 +77,7 @@ namespace MonoGameBallerburg
       this.graphicsManager = graphicsManager;
 
       controls = new Collection<Control>();
-      //resourceLoader = new Windows.ApplicationModel.Resources.ResourceLoader();
+      ////resourceLoader = new Windows.ApplicationModel.Resources.ResourceLoader();
       ////Viewport viewport = this.GraphicsManager.GraphicsDevice.Viewport;
     }
 
@@ -369,7 +369,7 @@ namespace MonoGameBallerburg
     }
 
     /// <summary>
-    /// Aktiviert das Control
+    /// Aktiviert das Control.
     /// </summary>
     public virtual void Activate()
     {
@@ -382,7 +382,7 @@ namespace MonoGameBallerburg
     }
 
     /// <summary>
-    /// Deaktiviert das Control
+    /// Deaktiviert das Control.
     /// </summary>
     public virtual void Deactivate()
     {
@@ -404,7 +404,7 @@ namespace MonoGameBallerburg
     /// <param name="gameTime">The game time.</param>
     /// <param name="time">The time passed.</param>
     /// <param name="direction">The direction.</param>
-    /// <returns>True, if the screen is not transitioning any more</returns>
+    /// <returns>True, if the screen is not transitioning any more.</returns>
     protected bool UpdateTransition(GameTime gameTime, TimeSpan time, int direction)
     {
       // How much should we move by?

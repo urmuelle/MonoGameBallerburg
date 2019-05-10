@@ -1,5 +1,5 @@
 ﻿// <copyright file="SoundScreen.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
@@ -8,10 +8,10 @@ namespace MonoGameBallerburg.Screens
   using System;
   using System.Collections.Generic;
   using System.Collections.ObjectModel;
-  using Controls;
-  using Gameplay;
-  using Manager;
   using Microsoft.Xna.Framework;
+  using MonoGameBallerburg.Controls;
+  using MonoGameBallerburg.Gameplay;
+  using MonoGameBallerburg.Manager;
 
   public class SoundScreen : MenuScreen
   {
@@ -81,7 +81,7 @@ namespace MonoGameBallerburg.Screens
 
     /// <summary>
     /// When the user presses this button, we go on to the messagebox screen
-    /// asking for the gamestyle he wants to play
+    /// asking for the gamestyle he wants to play.
     /// </summary>
     /// <param name="sender">The sender.</param>
     /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>

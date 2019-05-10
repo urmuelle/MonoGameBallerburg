@@ -1,14 +1,14 @@
 ﻿// <copyright file="Camera.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
 namespace MonoGameBallerburg.Graphic
 {
   using System;
-  using Manager;
   using Microsoft.Xna.Framework;
   using Microsoft.Xna.Framework.Graphics;
+  using MonoGameBallerburg.Manager;
 
   /// <summary>
   /// The camera may either be in Castle, Tower or Cannon view state
@@ -33,7 +33,7 @@ namespace MonoGameBallerburg.Graphic
     /// <summary>
     /// Camera is controlled by a script, not by user
     /// </summary>
-    Animated
+    Animated,
   }
 
   /// <summary>
@@ -390,7 +390,7 @@ namespace MonoGameBallerburg.Graphic
       var upVector = Vector3.Cross(new Vector3(targDirection.X, 0, targDirection.Z), new Vector3(cameraDirection.X, 0, cameraDirection.Z));
       var perpDirection = Vector3.Cross(upVector, cameraDirection);
 
-      if (perpDirection == new Vector3())
+      if (perpDirection == default(Vector3))
       {
         perpDirection = new Vector3(0, 1, 0);
       }

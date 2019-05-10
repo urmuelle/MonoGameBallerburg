@@ -1,19 +1,17 @@
 ﻿// <copyright file="TowerSettings.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
 namespace MonoGameBallerburg.Gameplay
 {
   using System;
-
-  using Graphic;
   using Microsoft.Xna.Framework;
-
+  using MonoGameBallerburg.Graphic;
   using MonoGameBallerburg.Manager;
 
   /// <summary>
-  /// Settings used for common tower properties
+  /// Settings used for common tower properties.
   /// </summary>
   public class TowerSettings : IDisposable
   {
@@ -87,7 +85,7 @@ namespace MonoGameBallerburg.Gameplay
     }
 
     /// <summary>
-    /// Gets or sets the tower's viewing direction
+    /// Gets or sets the tower's viewing direction.
     /// </summary>
     /// <value>
     /// The view direction.
@@ -99,7 +97,7 @@ namespace MonoGameBallerburg.Gameplay
     }
 
     /// <summary>
-    /// Gets or sets the tower's camera position
+    /// Gets or sets the tower's camera position.
     /// </summary>
     /// <value>
     /// The camera position.
@@ -111,7 +109,7 @@ namespace MonoGameBallerburg.Gameplay
     }
 
     /// <summary>
-    /// Gets or sets a value indicating whether the tower has a cannon
+    /// Gets or sets a value indicating whether the tower has a cannon.
     /// </summary>
     /// <value>
     ///   <c>true</c> if this instance has cannon; otherwise, <c>false</c>.
@@ -146,7 +144,7 @@ namespace MonoGameBallerburg.Gameplay
     }
 
     /// <summary>
-    /// Releases unmanaged and - optionally - managed resources
+    /// Releases unmanaged and - optionally - managed resources.
     /// </summary>
     /// <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
     protected virtual void Dispose(bool disposing)

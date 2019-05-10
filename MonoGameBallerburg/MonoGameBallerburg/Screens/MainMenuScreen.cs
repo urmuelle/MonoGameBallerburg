@@ -1,5 +1,5 @@
 ﻿// <copyright file="MainMenuScreen.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
@@ -8,12 +8,12 @@ namespace MonoGameBallerburg.Screens
   using System;
   using System.Collections.Generic;
   using System.Collections.ObjectModel;
-  using Controls;
-  using Manager;
   using Microsoft.Xna.Framework;
+  using MonoGameBallerburg.Controls;
+  using MonoGameBallerburg.Manager;
 
   /// <summary>
-  /// The games Main menu, shown, before gameplay starts
+  /// The games Main menu, shown, before gameplay starts.
   /// </summary>
   public class MainMenuScreen : MenuScreen
   {
@@ -48,7 +48,7 @@ namespace MonoGameBallerburg.Screens
 
       anzahlSpielerToggleButton = new ComboToggleButton(this, "Spieler", new Collection<string>(numPlayerList), 0, 0)
                                       {
-                                        Position = new Vector2(10, 100)
+                                        Position = new Vector2(10, 100),
                                       };
       anzahlSpielerToggleButton.Selected += ToggleNumPlayersMenuEntrySelected;
 
@@ -68,21 +68,21 @@ namespace MonoGameBallerburg.Screens
 
       spielerActionButtons[0] = new ActionToggleButton(this, "Spieler 1", screenManager.PlayerSettings[0].PlayerName, 0)
                                     {
-                                      Position = new Vector2(220, 100)
+                                      Position = new Vector2(220, 100),
                                     };
       spielerActionButtons[0].Selected += Spieler1KonfigurierenMenuEntrySelected;
       screenManager.PlayerSettings[0].IsActive = true;
 
       spielerActionButtons[1] = new ActionToggleButton(this, "Spieler 2", screenManager.PlayerSettings[1].PlayerName, 0)
                                     {
-                                      Position = new Vector2(430, 100)
+                                      Position = new Vector2(430, 100),
                                     };
       spielerActionButtons[1].Selected += Spieler2KonfigurierenMenuEntrySelected;
       screenManager.PlayerSettings[1].IsActive = true;
 
       spielerActionButtons[2] = new ActionToggleButton(this, "Spieler 3", screenManager.PlayerSettings[2].PlayerName, 0)
                                     {
-                                      Position = new Vector2(220, 150)
+                                      Position = new Vector2(220, 150),
                                     };
       spielerActionButtons[2].Selected += Spieler3KonfigurierenMenuEntrySelected;
       spielerActionButtons[2].SetInactive();
@@ -90,7 +90,7 @@ namespace MonoGameBallerburg.Screens
 
       spielerActionButtons[3] = new ActionToggleButton(this, "Spieler 4", screenManager.PlayerSettings[3].PlayerName, 0)
                                     {
-                                      Position = new Vector2(430, 150)
+                                      Position = new Vector2(430, 150),
                                     };
       spielerActionButtons[3].Selected += Spieler4KonfigurierenMenuEntrySelected;
       spielerActionButtons[3].SetInactive();
@@ -123,7 +123,7 @@ namespace MonoGameBallerburg.Screens
 
     /// <summary>
     /// When the user presses this button, we go on to the messagebox screen
-    /// asking for the gamestyle he wants to play
+    /// asking for the gamestyle he wants to play.
     /// </summary>
     /// <param name="sender">The sender.</param>
     /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
@@ -138,7 +138,7 @@ namespace MonoGameBallerburg.Screens
 
     /// <summary>
     /// When the user presses this button, we go on to the messagebox screen
-    /// asking for the gamestyle he wants to play
+    /// asking for the gamestyle he wants to play.
     /// </summary>
     /// <param name="sender">The sender.</param>
     /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
@@ -152,7 +152,7 @@ namespace MonoGameBallerburg.Screens
 
     /// <summary>
     /// When the user presses this button, we go on to the screen for
-    /// the network connection
+    /// the network connection.
     /// </summary>
     /// <param name="sender">The sender.</param>
     /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
@@ -175,7 +175,7 @@ namespace MonoGameBallerburg.Screens
 
     /// <summary>
     /// When the user presses this button, we go on to the screen for
-    /// the network connection
+    /// the network connection.
     /// </summary>
     /// <param name="sender">The sender.</param>
     /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
@@ -189,7 +189,7 @@ namespace MonoGameBallerburg.Screens
 
     /// <summary>
     /// When the user presses this button, we go on to the screen for
-    /// the network connection
+    /// the network connection.
     /// </summary>
     /// <param name="sender">The sender.</param>
     /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
@@ -203,7 +203,7 @@ namespace MonoGameBallerburg.Screens
 
     /// <summary>
     /// When the user presses this button, we go on to the screen for
-    /// the network connection
+    /// the network connection.
     /// </summary>
     /// <param name="sender">The sender.</param>
     /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
@@ -217,7 +217,7 @@ namespace MonoGameBallerburg.Screens
 
     /// <summary>
     /// When the user presses this button, we go on to the screen for
-    /// the network connection
+    /// the network connection.
     /// </summary>
     /// <param name="sender">The sender.</param>
     /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
@@ -278,7 +278,7 @@ namespace MonoGameBallerburg.Screens
     }
 
     /// <summary>
-    /// Handler that is being called, when the screen is activated when it had been covered before
+    /// Handler that is being called, when the screen is activated when it had been covered before.
     /// </summary>
     /// <param name="sender">The sender.</param>
     /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>

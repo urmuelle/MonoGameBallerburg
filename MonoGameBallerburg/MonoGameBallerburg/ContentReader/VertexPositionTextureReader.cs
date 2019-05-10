@@ -1,5 +1,5 @@
 ﻿// <copyright file="VertexPositionTextureReader.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
@@ -15,12 +15,14 @@ namespace MonoGameBallerburg
     /// </summary>
     /// <param name="input">The input.</param>
     /// <param name="existingInstance">The existing instance.</param>
-    /// <returns>A new VertexPositionTexture instance</returns>
+    /// <returns>A new VertexPositionTexture instance.</returns>
     protected override VertexPositionTexture Read(ContentReader input, VertexPositionTexture existingInstance)
     {
-      VertexPositionTexture vertex = new VertexPositionTexture();
-      vertex.Position = input.ReadVector3();
-      vertex.TextureCoordinate = input.ReadVector2();
+      VertexPositionTexture vertex = new VertexPositionTexture
+      {
+        Position = input.ReadVector3(),
+        TextureCoordinate = input.ReadVector2(),
+      };
 
       return vertex;
     }

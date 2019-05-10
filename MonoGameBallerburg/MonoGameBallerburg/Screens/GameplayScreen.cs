@@ -1,25 +1,23 @@
 ﻿// <copyright file="GameplayScreen.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
 namespace MonoGameBallerburg.Screens
 {
   using System;
-  using System.Globalization;
   using System.Linq;
-  using Controls;
-  using Gameplay;
-  using Graphic;
-  using Manager;
   using Microsoft.Xna.Framework;
   using Microsoft.Xna.Framework.Graphics;
-  using Microsoft.Xna.Framework.Input;
+  using MonoGameBallerburg.Controls;
+  using MonoGameBallerburg.Gameplay;
+  using MonoGameBallerburg.Graphic;
+  using MonoGameBallerburg.Manager;
 
   /// <summary>
   /// The game Screen and its logic
   /// TODO: Powder and start velocity
-  /// TODO: Fix Player Switch Bug  
+  /// TODO: Fix Player Switch Bug
   /// TODO: If cannon lost to change to, go to castle view
   /// TODO: If cannon destroyed, do a castle view move
   /// TODO: Game Over Screen
@@ -32,9 +30,8 @@ namespace MonoGameBallerburg.Screens
   /// TODO: Season
   /// TODO: Weather
   /// TODO: Weather: Rain
-  /// TODO: Weather: Fog  
-  /// TODO: Correct Initialization of Bezier Curve for Cannon Camera
-  /// TODO: Correct Initialization of Bezier Curve for Castle Camera
+  /// TODO: Weather: Fog
+  /// TODO: Correct Initialization of Bezier Curve for Castle Camera.
   /// </summary>
   public class GameplayScreen : GameScreen, IDisposable
   {
@@ -124,7 +121,7 @@ namespace MonoGameBallerburg.Screens
     ////BoundingFrustum cameraFrustum = new BoundingFrustum(Matrix.Identity);
 
     /// <summary>
-    /// The player currently active
+    /// The player currently active.
     /// </summary>
     private int activePlayer;
     private int winnerId;
@@ -150,7 +147,7 @@ namespace MonoGameBallerburg.Screens
     /// <summary>
     /// Load graphics content for the game.
     /// - The initial view is the castle view
-    /// - The initally selected tower is intialized is tower 0
+    /// - The initally selected tower is intialized is tower 0.
     /// </summary>
     public override void LoadContent()
     {
@@ -335,7 +332,7 @@ namespace MonoGameBallerburg.Screens
           {
             var ts = new TowerSettings(t, GraphicsManager)
             {
-              HasCannon = ScreenManager.GameObjectManager.Castles[ScreenManager.PlayerSettings[i].Castle.CastleType].Towers[tow].HasCannon
+              HasCannon = ScreenManager.GameObjectManager.Castles[ScreenManager.PlayerSettings[i].Castle.CastleType].Towers[tow].HasCannon,
             };
 
             ScreenManager.PlayerSettings[i].Castle.Towers.Add(ts);
@@ -610,7 +607,7 @@ namespace MonoGameBallerburg.Screens
           {
             activePlayer = 0;
           }
-        }        
+        }
 
         // Update all game objects currently in scene
         ScreenManager.GameObjectManager.Update(gameTime);
@@ -1125,7 +1122,7 @@ namespace MonoGameBallerburg.Screens
     }
 
     /// <summary>
-    /// TODO: Store viewing directions and positions
+    /// TODO: Store viewing directions and positions.
     /// </summary>
     /// <param name="sender">The sender.</param>
     /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
@@ -1704,7 +1701,7 @@ namespace MonoGameBallerburg.Screens
     #region Gamelogic
 
     /// <summary>
-    /// Update Money, Population, Prices
+    /// Update Money, Population, Prices.
     /// </summary>
     public void Calculation()
     {
@@ -1739,7 +1736,7 @@ namespace MonoGameBallerburg.Screens
     }
 
     /// <summary>
-    /// Init the game - logically
+    /// Init the game - logically.
     /// </summary>
     public void InitNewGame()
     {

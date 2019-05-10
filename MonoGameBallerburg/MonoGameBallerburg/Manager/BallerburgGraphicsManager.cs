@@ -1,5 +1,5 @@
 ﻿// <copyright file="BallerburgGraphicsManager.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
@@ -44,10 +44,10 @@ namespace MonoGameBallerburg.Manager
       }
     }
 
-    // Initialize all graphics properties.
+    /// <inheritdoc/>
     public void Initialize(XnaGraphicsDeviceManager xnaGraphics)
     {
-      if (null != this.graphics)
+      if (this.graphics != null)
       {
         return;
       }

@@ -1,5 +1,5 @@
 ﻿// <copyright file="ShaderManager.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
@@ -10,7 +10,7 @@ namespace MonoGameBallerburg.Manager
   using XnaContentManager = Microsoft.Xna.Framework.Content.ContentManager;
 
   /// <summary>
-  /// Class encapsulating access on the shaders used throughout the game
+  /// Class encapsulating access on the shaders used throughout the game.
   /// </summary>
   public class ShaderManager : IShaderManager
   {
@@ -33,7 +33,7 @@ namespace MonoGameBallerburg.Manager
     /// <param name="graphicsDevice">The graphics device.</param>
     public void LoadContent(XnaContentManager xnaContent, IBallerburgGraphicsManager graphicsDevice)
     {
-      if (null != this.content)
+      if (this.content != null)
       {
         return;
       }
@@ -46,7 +46,7 @@ namespace MonoGameBallerburg.Manager
       {
         TextureEnabled = true,
         VertexColorEnabled = false,
-        LightingEnabled = false
+        LightingEnabled = false,
       };
     }
 
@@ -55,7 +55,7 @@ namespace MonoGameBallerburg.Manager
     /// </summary>
     public void UnloadContent()
     {
-      if (null == this.content)
+      if (this.content == null)
       {
         return;
       }

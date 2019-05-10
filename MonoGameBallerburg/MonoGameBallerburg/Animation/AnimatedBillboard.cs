@@ -1,5 +1,5 @@
 ﻿// <copyright file="AnimatedBillboard.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
@@ -7,13 +7,13 @@ namespace MonoGameBallerburg.Animation
 {
   using System;
   using System.Collections.Generic;
-  using Graphic;
-  using Manager;
   using Microsoft.Xna.Framework;
   using Microsoft.Xna.Framework.Graphics;
+  using MonoGameBallerburg.Graphic;
+  using MonoGameBallerburg.Manager;
 
   /// <summary>
-  /// Class used to represent an animated billboard
+  /// Class used to represent an animated billboard.
   /// </summary>
   public class AnimatedBillboard : IDisposable
   {
@@ -123,7 +123,7 @@ namespace MonoGameBallerburg.Animation
       cameraToBillboard.Y = 0;
       cameraToBillboard.Normalize();
 
-      // Der Vektor zeigt nach oben bzw. nach unten, und beeinflusst damit die 
+      // Der Vektor zeigt nach oben bzw. nach unten, und beeinflusst damit die
       // Richtung der Drehung. Er wird quasi als "Drehachse" verwendet.
       var upVector = Vector3.Cross(direction, cameraToBillboard);
       upVector.Normalize();
@@ -309,7 +309,7 @@ namespace MonoGameBallerburg.Animation
     }
 
     /// <summary>
-    /// Releases unmanaged and - optionally - managed resources
+    /// Releases unmanaged and - optionally - managed resources.
     /// </summary>
     /// <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
     protected virtual void Dispose(bool disposing)

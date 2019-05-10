@@ -1,5 +1,5 @@
 ﻿// <copyright file="Tower.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
@@ -310,7 +310,7 @@ namespace MonoGameBallerburg.Graphic
     {
       Initialize();
 
-      // Initialize all parts necessary for rendering            
+      // Initialize all parts necessary for rendering
       vb = new VertexBuffer(graphicsDevice, typeof(VertexPositionNormalTexture), geometry.Length, BufferUsage.WriteOnly);
       vb.SetData(geometry);
       BuildIndexBuffer();
@@ -326,7 +326,7 @@ namespace MonoGameBallerburg.Graphic
     }
 
     /// <summary>
-    /// Initialize the tower's geometry
+    /// Initialize the tower's geometry.
     /// </summary>
     private void Initialize()
     {
@@ -441,7 +441,7 @@ namespace MonoGameBallerburg.Graphic
     }
 
     /// <summary>
-    /// Releases unmanaged and - optionally - managed resources
+    /// Releases unmanaged and - optionally - managed resources.
     /// </summary>
     /// <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
     protected virtual void Dispose(bool disposing)

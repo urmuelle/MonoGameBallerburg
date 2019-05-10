@@ -1,5 +1,5 @@
 // <copyright file="MenuScreen.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
@@ -7,10 +7,10 @@ namespace MonoGameBallerburg.Screens
 {
   using System;
   using System.Collections.Generic;
-  using Controls;
-  using Manager;
   using Microsoft.Xna.Framework;
   using Microsoft.Xna.Framework.Graphics;
+  using MonoGameBallerburg.Controls;
+  using MonoGameBallerburg.Manager;
 
   /// <summary>
   /// Base class for screens that contain a menu of options. The user can

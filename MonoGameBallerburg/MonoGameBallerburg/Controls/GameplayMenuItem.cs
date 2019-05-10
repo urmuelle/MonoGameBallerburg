@@ -1,5 +1,5 @@
-﻿// <copyright file="GamePlayMenuItem.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+﻿// <copyright file="GameplayMenuItem.cs" company="Urs Müller">
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
@@ -107,7 +107,7 @@ namespace MonoGameBallerburg.Controls
                 this.State = States.Visible;
             }
         }
-    } 
+    }
      * */
 
     /// <summary>
@@ -116,7 +116,7 @@ namespace MonoGameBallerburg.Controls
     /// <returns> The rectangle this menuitem spans </returns>
     public Rectangle GetButtonRect()
     {
-      var rect = new Rectangle();
+      var rect = default(Rectangle);
       var screenManager = Owner.ScreenManager;
       rect.X = (int)Position.X;
       ////rect.Y = (int)position.Y - font.LineSpacing / 2;

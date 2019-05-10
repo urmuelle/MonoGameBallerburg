@@ -1,5 +1,5 @@
 ﻿// <copyright file="AnimationSequence.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
@@ -14,7 +14,9 @@ namespace MonoGameBallerburg.Animation
   /// </summary>
   public class AnimationSequence
   {
-    private float rotation, scale, depth;
+    private float rotation;
+    private float scale;
+    private float depth;
     private Vector2 origin;
     private int framecount;
     private List<AnimationFrame> frames;

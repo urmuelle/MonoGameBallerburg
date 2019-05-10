@@ -1,16 +1,16 @@
 ﻿// <copyright file="BallerburgGame.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
 namespace MonoGameBallerburg
 {
-  using Audio;
-  using Gameplay;
-  using Manager;
   using Microsoft.Xna.Framework;
   using Microsoft.Xna.Framework.Input;
-  using Screens;
+  using MonoGameBallerburg.Audio;
+  using MonoGameBallerburg.Gameplay;
+  using MonoGameBallerburg.Manager;
+  using MonoGameBallerburg.Screens;
 
   /// <summary>
   /// This is the main type for your game
@@ -36,7 +36,7 @@ namespace MonoGameBallerburg
     private readonly BallerburgGraphicsManager graphicsManager;
 
     /// <summary>
-    /// Initializes a new instance of the BallerburgGame class
+    /// Initializes a new instance of the <see cref="BallerburgGame"/> class.
     /// </summary>
     public BallerburgGame()
     {
@@ -49,7 +49,7 @@ namespace MonoGameBallerburg
       graphics = new GraphicsDeviceManager(this)
                      {
                        PreferredBackBufferWidth = 640,
-                       PreferredBackBufferHeight = 480
+                       PreferredBackBufferHeight = 480,
                      };
 
       graphicsManager = new BallerburgGraphicsManager();
@@ -61,14 +61,14 @@ namespace MonoGameBallerburg
       MousePointer = new MousePointer(this)
                          {
                            DrawOrder = 1000,
-                           RestrictZone = new Rectangle(0, 0, 640, 480)
+                           RestrictZone = new Rectangle(0, 0, 640, 480),
                          };
       Components.Add(MousePointer);
 
       // Create the screen manager component.
       screenManager = new ScreenManager(graphicsManager, contentManager, gameObjectManager, applicationSettings, gameSettings, shaderManager, audioManager, playerSettings)
                           {
-                            GameMousePointer = MousePointer
+                            GameMousePointer = MousePointer,
                           };
     }
 
@@ -126,7 +126,7 @@ namespace MonoGameBallerburg
       // Allows the game to exit
       if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
       {
-        //Exit();
+        ////Exit();
       }
 
       this.audioManager.Update();
@@ -139,8 +139,6 @@ namespace MonoGameBallerburg
     /// <param name="gameTime">Provides a snapshot of timing values.</param>
     protected override void Draw(GameTime gameTime)
     {
-      ////GraphicsManager.GraphicsDevice.Clear(Color.CornflowerBlue);            
-      ///// TODO: Add your drawing code here            
       screenManager.Draw(gameTime);
 
       base.Draw(gameTime);

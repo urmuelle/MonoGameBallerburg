@@ -1,11 +1,11 @@
 ﻿// <copyright file="HumanPlayer.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
 namespace MonoGameBallerburg.Gameplay
 {
-  using Graphic;
+  using MonoGameBallerburg.Graphic;
 
   public class HumanPlayer : Player
   {

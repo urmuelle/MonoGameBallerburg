@@ -1,5 +1,5 @@
 ﻿// <copyright file="CannonSettings.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
@@ -9,7 +9,7 @@ namespace MonoGameBallerburg.Gameplay
   using Microsoft.Xna.Framework;
 
   /// <summary>
-  /// Class containing all information for cannons
+  /// Class containing all information for cannons.
   /// </summary>
   public class CannonSettings
   {

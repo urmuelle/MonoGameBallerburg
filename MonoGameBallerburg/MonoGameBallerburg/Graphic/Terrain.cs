@@ -1,5 +1,5 @@
 ﻿// <copyright file="Terrain.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
@@ -13,7 +13,7 @@ namespace MonoGameBallerburg.Graphic
   using MonoGameBallerburg.Manager;
 
   /// <summary>
-  /// Class used to represent ballerburgs terrain
+  /// Class used to represent ballerburgs terrain.
   /// </summary>
   public class Terrain : IDisposable
   {
@@ -44,7 +44,7 @@ namespace MonoGameBallerburg.Graphic
     /// <param name="graphicsDevice">The graphics device.</param>
     public void Draw(Matrix viewMatrix, Matrix projectionMatrix, Effect shaderEffect, GraphicsDevice graphicsDevice)
     {
-      // Kopie der Sichtmatrix erstellen und die Translation 
+      // Kopie der Sichtmatrix erstellen und die Translation
       // unberücksichtigt lassen, da der Himmel unendlich erscheinen soll
       // unabhängig davon, wo wir uns im Level befinden
       Matrix view = viewMatrix;

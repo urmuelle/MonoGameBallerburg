@@ -1,5 +1,5 @@
 ﻿// <copyright file="SkyBox.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
@@ -86,7 +86,7 @@ namespace MonoGameBallerburg.Graphic
 
     public void Draw(GameTime gameTime, Matrix viewMatrix, Matrix projectionMatrix)
     {
-      // Kopie der Sichtmatrix erstellen und die Translation 
+      // Kopie der Sichtmatrix erstellen und die Translation
       // unberücksichtigt lassen, da der Himmel unendlich erscheinen soll
       // unabhängig davon, wo wir uns im Level befinden
       Matrix view = viewMatrix;
@@ -168,7 +168,7 @@ namespace MonoGameBallerburg.Graphic
     }
 
     /// <summary>
-    /// Releases unmanaged and - optionally - managed resources
+    /// Releases unmanaged and - optionally - managed resources.
     /// </summary>
     /// <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
     protected virtual void Dispose(bool disposing)

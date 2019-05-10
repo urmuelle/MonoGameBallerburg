@@ -1,16 +1,16 @@
 ﻿// <copyright file="Cannonball.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
 namespace MonoGameBallerburg.Graphic
 {
-  using Manager;
   using Microsoft.Xna.Framework;
   using Microsoft.Xna.Framework.Graphics;
+  using MonoGameBallerburg.Manager;
 
   /// <summary>
-  /// Class for holding Cannonball Game Objects
+  /// Class for holding Cannonball Game Objects.
   /// </summary>
   public class Cannonball
   {
@@ -29,7 +29,7 @@ namespace MonoGameBallerburg.Graphic
     private int totalTime;
 
     /// <summary>
-    /// Initializes a new instance of the Cannonball class.
+    /// Initializes a new instance of the <see cref="Cannonball"/> class.
     /// </summary>
     /// <param name="contentManager">The content manager.</param>
     public Cannonball(IContentManager contentManager)
@@ -40,7 +40,7 @@ namespace MonoGameBallerburg.Graphic
     }
 
     /// <summary>
-    /// Gets or sets a value indicating whether the cannonball is alive
+    /// Gets or sets a value indicating whether the cannonball is alive.
     /// </summary>
     public bool Alive
     {
@@ -103,8 +103,8 @@ namespace MonoGameBallerburg.Graphic
     /// <summary>
     /// Draws the cannonball.
     /// </summary>
-    /// <param name="viewMatrix">The camera's view matrix</param>
-    /// <param name="projectionMatrix">The camera's projection matrix</param>
+    /// <param name="viewMatrix">The camera's view matrix.</param>
+    /// <param name="projectionMatrix">The camera's projection matrix.</param>
     /// <param name="lightMatrix">The light matrix.</param>
     /// <param name="theEffect">The effect.</param>
     public void Draw(Matrix viewMatrix, Matrix projectionMatrix, Matrix lightMatrix, Effect theEffect)
@@ -121,7 +121,7 @@ namespace MonoGameBallerburg.Graphic
             }
 
             foreach (var effect in mesh.Effects)
-            {                   
+            {
                 var world = transforms[mesh.ParentBone.Index] * Matrix.CreateScale(0.5f) * Matrix.CreateTranslation(position.X, position.Y, position.Z);
 
                 effect.CurrentTechnique = effect.Techniques[theEffect.CurrentTechnique.Name];
@@ -134,7 +134,7 @@ namespace MonoGameBallerburg.Graphic
                 effect.Parameters["xAmbient"].SetValue(theEffect.Parameters["xAmbient"].GetValueSingle());
                 effect.Parameters["xLightsWorldViewProjection"].SetValue(world * lightMatrix);
                 effect.Parameters["xShadowMap"].SetValue(theEffect.Parameters["xShadowMap"].GetValueTexture2D());
-                    
+
                 /*
                 effect.Parameters["xAmbientIntensity"].SetValue(0.5f);
                 effect.Parameters["xAmbientColor"].SetValue(new Vector3(1.0f, 1.0f, 1.0f));

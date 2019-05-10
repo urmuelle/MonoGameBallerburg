@@ -1,5 +1,5 @@
 ﻿// <copyright file="IShaderManager.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
@@ -9,7 +9,7 @@ namespace MonoGameBallerburg.Manager
   using XnaContentManager = Microsoft.Xna.Framework.Content.ContentManager;
 
   /// <summary>
-  /// Interface for a manager, dealing with the various shaders
+  /// Interface for a manager, dealing with the various shaders.
   /// </summary>
   public interface IShaderManager
   {

@@ -1,19 +1,19 @@
 ﻿// <copyright file="ContentManager.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
 namespace MonoGameBallerburg.Manager
 {
   using System.Collections.Generic;
-  using Graphic;
   using Microsoft.Xna.Framework.Audio;
   using Microsoft.Xna.Framework.Graphics;
   using Microsoft.Xna.Framework.Media;
+  using MonoGameBallerburg.Graphic;
   using XnaContentManager = Microsoft.Xna.Framework.Content.ContentManager;
 
   /// <summary>
-  /// The global ContentManager that manages all content
+  /// The global ContentManager that manages all content.
   /// </summary>
   public class ContentManager : IContentManager
   {
@@ -146,7 +146,7 @@ namespace MonoGameBallerburg.Manager
 
     /// <summary>
     /// Gets the cannon texture.
-    /// </summary>        
+    /// </summary>
     public Texture2D CannonTexture { get; private set; }
 
     /// <summary>
@@ -210,7 +210,7 @@ namespace MonoGameBallerburg.Manager
     /// </summary>
     public void UnloadContent()
     {
-      if (null == this.content)
+      if (this.content == null)
       {
         return;
       }
@@ -225,7 +225,7 @@ namespace MonoGameBallerburg.Manager
     /// <param name="graphicsManager">The graphics manager.</param>
     public void LoadContent(XnaContentManager xnaContent, IBallerburgGraphicsManager graphicsManager)
     {
-      if (null != this.content)
+      if (this.content != null)
       {
         return;
       }
@@ -279,7 +279,7 @@ namespace MonoGameBallerburg.Manager
         { "HighTension", content.Load<Song>(@"Audio\Music2") },
         { "Tentacle", content.Load<Song>(@"Audio\Music3") },
         { "DeathRow", content.Load<Song>(@"Audio\Music4") },
-        { "Boomerang", content.Load<Song>(@"Audio\Music5") }
+        { "Boomerang", content.Load<Song>(@"Audio\Music5") },
       };
 
       SoundEffects = new Dictionary<string, SoundEffect>
@@ -289,7 +289,7 @@ namespace MonoGameBallerburg.Manager
         { "TubeMoveSound", content.Load<SoundEffect>(@"Audio\Sound9") },
         { "HitSound", content.Load<SoundEffect>(@"Audio\Sound9") },
         { "ShootSound", content.Load<SoundEffect>(@"Audio\Sound10") },
-        { "CannonRotateSound", content.Load<SoundEffect>(@"Audio\Sound12") }
+        { "CannonRotateSound", content.Load<SoundEffect>(@"Audio\Sound12") },
       };
     }
 

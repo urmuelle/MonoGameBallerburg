@@ -1,5 +1,5 @@
 ﻿// <copyright file="CastleSettings.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
@@ -10,12 +10,12 @@ namespace MonoGameBallerburg.Gameplay
   using Microsoft.Xna.Framework;
 
   /// <summary>
-  /// Common Settings that represent a castle
+  /// Common Settings that represent a castle.
   /// </summary>
   public class CastleSettings
   {
     /// <summary>
-    /// A castle has a set of towers
+    /// A castle has a set of towers.
     /// </summary>
     private Collection<TowerSettings> towerSettings;
 
@@ -80,9 +80,9 @@ namespace MonoGameBallerburg.Gameplay
     /// <summary>
     /// Sets the castle's current Tower to the given tower number.
     /// If the tower number is greater than the amount of Towers
-    /// an ArgumentException is thrown. Tower count starts with 0!
+    /// an ArgumentException is thrown. Tower count starts with 0!.
     /// </summary>
-    /// <param name="towerNum">The number (i.e. the index) of the tower</param>
+    /// <param name="towerNum">The number (i.e. the index) of the tower.</param>
     public void SelectTower(int towerNum)
     {
       this.currentTower = towerNum;

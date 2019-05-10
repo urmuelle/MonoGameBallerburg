@@ -1,12 +1,12 @@
 ﻿// <copyright file="CastleContentReader.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
 namespace MonoGameBallerburg
 {
-  using Graphic;
   using Microsoft.Xna.Framework.Content;
+  using MonoGameBallerburg.Graphic;
 
   public class CastleContentReader : ContentTypeReader<Castle>
   {

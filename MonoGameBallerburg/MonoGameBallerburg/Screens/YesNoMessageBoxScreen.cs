@@ -1,18 +1,18 @@
 ﻿// <copyright file="YesNoMessageBoxScreen.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
 namespace MonoGameBallerburg.Screens
 {
   using System;
-  using Controls;
-  using Manager;
   using Microsoft.Xna.Framework;
   using Microsoft.Xna.Framework.Graphics;
+  using MonoGameBallerburg.Controls;
+  using MonoGameBallerburg.Manager;
 
-  [System.Diagnostics.CodeAnalysis.SuppressMessage
-  ("Microsoft.StyleCop.CSharp.NamingRules", "SA1305:FieldNamesMustNotUseHungarianNotation", Justification = "Rule does not apply here")]
+  [System.Diagnostics.CodeAnalysis.SuppressMessage(
+  "Microsoft.StyleCop.CSharp.NamingRules", "SA1305:FieldNamesMustNotUseHungarianNotation", Justification = "Rule does not apply here")]
   public class YesNoMessageBoxScreen : GameScreen
   {
     #region Fields

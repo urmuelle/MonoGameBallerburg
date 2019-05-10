@@ -1,15 +1,15 @@
 ﻿// <copyright file="TowerInformationReader.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
 namespace MonoGameBallerburg
 {
-  using Graphic;
   using Microsoft.Xna.Framework.Content;
+  using MonoGameBallerburg.Graphic;
 
   /// <summary>
-  /// Content Reader for the Content Pipeline Extension
+  /// Content Reader for the Content Pipeline Extension.
   /// </summary>
   public class TowerInformationReader : ContentTypeReader<Tower>
   {
@@ -18,7 +18,7 @@ namespace MonoGameBallerburg
     /// </summary>
     /// <param name="input">The input.</param>
     /// <param name="existingInstance">The existing instance.</param>
-    /// <returns>New Tower instance</returns>
+    /// <returns>New Tower instance.</returns>
     protected override Tower Read(ContentReader input, Tower existingInstance)
     {
       return new Tower(input);

@@ -1,14 +1,14 @@
 ﻿// <copyright file="Cannon.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
 namespace MonoGameBallerburg.Graphic
 {
   using System;
-  using Manager;
   using Microsoft.Xna.Framework;
   using Microsoft.Xna.Framework.Graphics;
+  using MonoGameBallerburg.Manager;
 
   /// <summary>
   /// Class for drawing and holding state information about a cannon
@@ -53,7 +53,7 @@ namespace MonoGameBallerburg.Graphic
     private BoundingSphere boundingVolumeSphere;
 
     /// <summary>
-    /// Initializes a new instance of the Cannon class.
+    /// Initializes a new instance of the <see cref="Cannon"/> class.
     /// </summary>
     /// <param name="x">Position on the x-Axis</param>
     /// <param name="y">Position on the y-Axis</param>
@@ -192,7 +192,7 @@ namespace MonoGameBallerburg.Graphic
     {
       get
       {
-        BoundingSphere bs = new BoundingSphere();
+        BoundingSphere bs = default(BoundingSphere);
         Matrix trans = Matrix.CreateTranslation(this.cannonPosition);
         this.boundingVolumeSphere.Transform(ref trans, out bs);
         return bs;

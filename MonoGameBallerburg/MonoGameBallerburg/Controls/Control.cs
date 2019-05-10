@@ -1,5 +1,5 @@
 ﻿// <copyright file="Control.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
@@ -11,7 +11,7 @@ namespace MonoGameBallerburg.Controls
   using Microsoft.Xna.Framework.Graphics;
 
   /// <summary>
-  /// The controls states
+  /// The controls states.
   /// </summary>
   public enum States
   {
@@ -43,11 +43,11 @@ namespace MonoGameBallerburg.Controls
     /// <summary>
     /// The entry is inactive
     /// </summary>
-    Inactive = 5
+    Inactive = 5,
   }
 
   /// <summary>
-  /// Base class for all controls used in the ballerbug game
+  /// Base class for all controls used in the ballerbug game.
   /// </summary>
   public abstract class Control
   {
@@ -269,7 +269,7 @@ namespace MonoGameBallerburg.Controls
     #region Methods
 
     /// <summary>
-    /// Aktiviert das Control
+    /// Aktiviert das Control.
     /// </summary>
     public virtual void Activate()
     {
@@ -277,12 +277,12 @@ namespace MonoGameBallerburg.Controls
 
       if (this.ControlActivated != null)
       {
-        this.ControlActivated(this, EventArgs.Empty);
+        ControlActivated(this, EventArgs.Empty);
       }
     }
 
     /// <summary>
-    /// Deaktiviert das Control
+    /// Deaktiviert das Control.
     /// </summary>
     public virtual void Deactivate()
     {
@@ -290,7 +290,7 @@ namespace MonoGameBallerburg.Controls
 
       if (this.ControlDeactived != null)
       {
-        this.ControlDeactived(this, EventArgs.Empty);
+        ControlDeactived(this, EventArgs.Empty);
       }
     }
 
@@ -316,7 +316,7 @@ namespace MonoGameBallerburg.Controls
         //Der Cursor befindet sich nicht über dem Element
         return false;
     }
-        
+
     /// <summary>
     /// Implementieren Sie an dieser Stelle die Logik, um auf Benutzereingaben zu reagieren
     /// </summary>
@@ -333,7 +333,7 @@ namespace MonoGameBallerburg.Controls
     {
         //Verharrt der Cursor an seiner Position (Delta = 0) oder wenn das
         //Control bereits aktiv ist, dann findet kein Intersection-Test statt.
-        //Hintergrund: 
+        //Hintergrund:
         //Wird der Cursor nicht bewegt und der Benutzer aktiviert z.B. über die Tastatur
         //ein anderes Element, so würde ein Intersection-Test unter Umständen dazu führen,
         //dass das Element unter dem Cursor wieder aktiv wird. Somit währe keine Steuerung
@@ -344,21 +344,21 @@ namespace MonoGameBallerburg.Controls
     */
 
     /// <summary>
-    /// Implementieren Sie diese Methode, um grafische Ressourcen zu laden
+    /// Implementieren Sie diese Methode, um grafische Ressourcen zu laden.
     /// </summary>
     public virtual void LoadContent()
     {
     }
 
     /// <summary>
-    /// Implementieren Sie diese Methode, um "Aufräumarbeiten" bezüglich grafischer Ressourcen durchzuführen
+    /// Implementieren Sie diese Methode, um "Aufräumarbeiten" bezüglich grafischer Ressourcen durchzuführen.
     /// </summary>
     public virtual void UnloadContent()
     {
     }
 
     /// <summary>
-    /// Implementiert die Logik des Controls
+    /// Implementiert die Logik des Controls.
     /// </summary>
     /// <param name="gameTime">The game time.</param>
     public virtual void Update(GameTime gameTime)
@@ -367,7 +367,7 @@ namespace MonoGameBallerburg.Controls
     }
 
     /// <summary>
-    /// Implementiert den Render-Prozess des Controls
+    /// Implementiert den Render-Prozess des Controls.
     /// </summary>
     /// <param name="gameTime">The game time.</param>
     public abstract void Draw(GameTime gameTime);

@@ -1,5 +1,5 @@
 ﻿// <copyright file="EinstellungenScreen.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
@@ -7,14 +7,14 @@ namespace MonoGameBallerburg.Screens
 {
   using System;
   using System.Globalization;
-  using Controls;
-  using Manager;
   using Microsoft.Xna.Framework;
+  using MonoGameBallerburg.Controls;
+  using MonoGameBallerburg.Manager;
 
   /// <summary>
   /// The screen, where money, population and bying new items is handled
   /// TODO: Use Translation Keys
-  /// TODO: Do not hardcode the prizes
+  /// TODO: Do not hardcode the prizes.
   /// </summary>
   public class EinstellungenScreen : MenuScreen
   {
@@ -73,7 +73,7 @@ namespace MonoGameBallerburg.Screens
 
       // Kaufbuttons
       atbCannon = new ActionToggleButton(this, "Kanone", "4000$", 0) { Position = new Vector2(220, 310) };
-      atbCannon.Selected += delegate
+      atbCannon.Selected += (sender, e) =>
                                 {
                                   screenManager.AudioManager.PlayKlickSound();
                                   screenManager.PlayerSettings[playerId].Money -= 4000;
@@ -81,21 +81,21 @@ namespace MonoGameBallerburg.Screens
                                 };
 
       atbPulver = new ActionToggleButton(this, "1000g Pulver", "1000$", 0) { Position = new Vector2(420, 310) };
-      atbPulver.Selected += delegate
+      atbPulver.Selected += (sender, e) =>
                                 {
                                   screenManager.AudioManager.PlayKlickSound();
                                   screenManager.PlayerSettings[playerId].Money -= 1000;
                                   screenManager.PlayerSettings[playerId].AddPowder();
                                 };
       atbEisenkugel = new ActionToggleButton(this, "Eisenkugel", "1000$", 0) { Position = new Vector2(420, 360) };
-      atbEisenkugel.Selected += delegate
+      atbEisenkugel.Selected += (sender, e) =>
                                     {
                                       screenManager.AudioManager.PlayKlickSound();
                                       screenManager.PlayerSettings[playerId].Money -= 1000;
                                       screenManager.PlayerSettings[playerId].AddIronBall();
                                     };
       atbSteinkugel = new ActionToggleButton(this, "Steinkugel", "250$", 0) { Position = new Vector2(220, 360) };
-      atbSteinkugel.Selected += delegate
+      atbSteinkugel.Selected += (sender, e) =>
                                     {
                                       screenManager.AudioManager.PlayKlickSound();
                                       screenManager.PlayerSettings[playerId].Money -= 250;
@@ -130,7 +130,7 @@ namespace MonoGameBallerburg.Screens
     }
 
     /// <summary>
-    /// Updates the menu - business rules for buying things in this game
+    /// Updates the menu - business rules for buying things in this game.
     /// </summary>
     /// <param name="gameTime">The game time.</param>
     /// <param name="otherScreenHasFocus">if set to <c>true</c> [other screen has focus].</param>
@@ -220,7 +220,7 @@ namespace MonoGameBallerburg.Screens
 
     /// <summary>
     /// When the user presses this button, we go on to the messagebox screen
-    /// asking for the gamestyle he wants to play
+    /// asking for the gamestyle he wants to play.
     /// </summary>
     /// <param name="sender">The sender.</param>
     /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
@@ -232,7 +232,7 @@ namespace MonoGameBallerburg.Screens
 
     /// <summary>
     /// When the user presses this button, we go on to the messagebox screen
-    /// asking for the gamestyle he wants to play
+    /// asking for the gamestyle he wants to play.
     /// </summary>
     /// <param name="sender">The sender.</param>
     /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>

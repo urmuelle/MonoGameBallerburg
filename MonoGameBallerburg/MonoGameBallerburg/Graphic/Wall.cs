@@ -1,5 +1,5 @@
 ﻿// <copyright file="Wall.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
@@ -11,63 +11,63 @@ namespace MonoGameBallerburg.Graphic
   using Microsoft.Xna.Framework.Graphics;
 
   /// <summary>
-  /// Class, for drawing and representing a castle wall
+  /// Class, for drawing and representing a castle wall.
   /// </summary>
   public class Wall : IDisposable
   {
     /// <summary>
-    /// The texture Object used for drawing
+    /// The texture Object used for drawing.
     /// </summary>
     private readonly Texture2D wallTexture;
 
     /// <summary>
-    /// Vertex and Index buffers used for drawing 
+    /// Vertex and Index buffers used for drawing.
     /// </summary>
     private VertexPositionNormalTexture[] geometry;
 
     /// <summary>
-    /// Indices array
+    /// Indices array.
     /// </summary>
     private short[] indices;
 
     /// <summary>
-    /// The VertexBuffer
+    /// The VertexBuffer.
     /// </summary>
     private VertexBuffer vb;
 
     /// <summary>
-    /// The IndexBuffer
+    /// The IndexBuffer.
     /// </summary>
     private IndexBuffer ib;
 
     /// <summary>
-    /// From Vector
-    /// </summary> 
+    /// From Vector.
+    /// </summary>
     private Vector3 startTower;
 
     /// <summary>
-    /// Index to the from tower
-    /// </summary> 
+    /// Index to the from tower.
+    /// </summary>
     private int fromIndex;
 
     /// <summary>
-    /// The To Vector
-    /// </summary> 
+    /// The To Vector.
+    /// </summary>
     private Vector3 endTower;
 
     /// <summary>
-    /// Index to the to tower
-    /// </summary> 
+    /// Index to the to tower.
+    /// </summary>
     private int toIndex;
 
     /// <summary>
-    /// The Wall height
-    /// </summary> 
+    /// The Wall height.
+    /// </summary>
     private float height;
 
     /// <summary>
-    /// Initializes a new instance of the Wall class.
-    /// Important: SetFromToVectors must be called afterwards!
+    /// Initializes a new instance of the <see cref="Wall"/> class.
+    /// Important: SetFromToVectors must be called afterwards!.
     /// </summary>
     /// <param name="reader">The Content Type Reader.</param>
     public Wall(ContentReader reader)
@@ -79,7 +79,7 @@ namespace MonoGameBallerburg.Graphic
     }
 
     /// <summary>
-    /// Gets the from index
+    /// Gets the from index.
     /// </summary>
     public int FromIndex
     {
@@ -87,7 +87,7 @@ namespace MonoGameBallerburg.Graphic
     }
 
     /// <summary>
-    /// Gets the to index
+    /// Gets the to index.
     /// </summary>
     public int ToIndex
     {
@@ -95,7 +95,7 @@ namespace MonoGameBallerburg.Graphic
     }
 
     /// <summary>
-    /// Set the from and to vectors (according to the tower's indexes)
+    /// Set the from and to vectors (according to the tower's indexes).
     /// </summary>
     /// <param name="from">From vector.</param>
     /// <param name="to">To vector.</param>
@@ -109,8 +109,8 @@ namespace MonoGameBallerburg.Graphic
     /// Draw the wall.
     /// </summary>
     /// <param name="world">The world.</param>
-    /// <param name="viewMatrix">The view matrix</param>
-    /// <param name="projectionMatrix">The projection matrix</param>
+    /// <param name="viewMatrix">The view matrix.</param>
+    /// <param name="projectionMatrix">The projection matrix.</param>
     /// <param name="lightView">The light view.</param>
     /// <param name="shaderEffect">The shader effect.</param>
     /// <param name="graphicsDevice">The graphics device.</param>
@@ -122,7 +122,7 @@ namespace MonoGameBallerburg.Graphic
       shaderEffect.Parameters["xLightsWorldViewProjection"].SetValue(world * lightView);
 
       graphicsDevice.RasterizerState = RasterizerState.CullNone;
-      graphicsDevice.BlendState = BlendState.Opaque;      
+      graphicsDevice.BlendState = BlendState.Opaque;
 
       for (var s = 0; s < 3; ++s)
       {
@@ -132,13 +132,13 @@ namespace MonoGameBallerburg.Graphic
 
           graphicsDevice.SetVertexBuffer(vb);
           graphicsDevice.Indices = ib;
-          graphicsDevice.DrawIndexedPrimitives(PrimitiveType.TriangleStrip, 0, 0, 4, 0, 2);
+          graphicsDevice.DrawIndexedPrimitives(primitiveType: PrimitiveType.TriangleStrip, baseVertex: 0, minVertexIndex: 0, numVertices: 4, startIndex: 0, primitiveCount: 2);
         }
       }
     }
 
     /// <summary>
-    /// Init Effects, vertex and indexbuffer
+    /// Init Effects, vertex and indexbuffer.
     /// </summary>
     /// <param name="graphicsDevice">The graphics device.</param>
     public void InitGraphics(GraphicsDevice graphicsDevice)
@@ -153,7 +153,7 @@ namespace MonoGameBallerburg.Graphic
     }
 
     /// <summary>
-    /// Generate the vertices for the wall to be drawn
+    /// Generate the vertices for the wall to be drawn.
     /// </summary>
     private void Initialize()
     {
@@ -167,7 +167,7 @@ namespace MonoGameBallerburg.Graphic
     }
 
     /// <summary>
-    /// Build the indexbuffer used for indexing the vertices to draw the tower
+    /// Build the indexbuffer used for indexing the vertices to draw the tower.
     /// </summary>
     private void BuildIndexBuffer()
     {
@@ -189,7 +189,7 @@ namespace MonoGameBallerburg.Graphic
     }
 
     /// <summary>
-    /// Releases unmanaged and - optionally - managed resources
+    /// Releases unmanaged and - optionally - managed resources.
     /// </summary>
     /// <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
     protected virtual void Dispose(bool disposing)

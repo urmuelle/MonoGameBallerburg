@@ -1,5 +1,5 @@
 ﻿// <copyright file="Textbox2.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
@@ -60,7 +60,7 @@ Keys.Z, Keys.Back, Keys.Space };
             this.spriteBatch = new SpriteBatch(Game.GraphicsDevice);
             ////(SpriteBatch)Game.Services.GetService(typeof(SpriteBatch));
             this.content = (ContentManager)Game.Content;
-            ////(ContentManager)Game.Services.GetService(typeof(ContentManager));         
+            ////(ContentManager)Game.Services.GetService(typeof(ContentManager));
             textboxTexture = content.Load<Texture2D>(@"GUI\textbox");
             cursor = content.Load<Texture2D>(@"GUI\cursor");
 
@@ -75,9 +75,9 @@ Keys.Z, Keys.Back, Keys.Space };
 
         public Vector2 Position
         {
-            get 
-            { 
-                return this.textboxPosition; 
+            get
+            {
+                return this.textboxPosition;
             }
 
             set
@@ -256,7 +256,7 @@ Keys.Z, Keys.Back, Keys.Space };
             {
                 spriteBatch.Draw(cursor, cursorPosition, Color.White);
             }
-            
+
             spriteBatch.DrawString(spriteFont, text, textPosition, Color.Black);
             spriteBatch.End();
             base.Draw(gameTime);

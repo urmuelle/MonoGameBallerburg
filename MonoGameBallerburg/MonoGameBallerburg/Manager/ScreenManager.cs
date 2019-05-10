@@ -1,5 +1,5 @@
 // <copyright file="ScreenManager.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
@@ -9,13 +9,11 @@ namespace MonoGameBallerburg
   using System.Collections.Generic;
   using System.Diagnostics;
   using System.Linq;
-
-  using Gameplay;
-  using Manager;
   using Microsoft.Xna.Framework;
   using Microsoft.Xna.Framework.Graphics;
-
   using MonoGameBallerburg.Audio;
+  using MonoGameBallerburg.Gameplay;
+  using MonoGameBallerburg.Manager;
 
   /// <summary>
   /// The screen manager is a component which manages one or more GameScreen
@@ -233,7 +231,7 @@ namespace MonoGameBallerburg
     /// <summary>
     /// Allows each screen to run logic.
     /// </summary>
-    /// <param name="gameTime">Time elapsed since the last call to Update</param>
+    /// <param name="gameTime">Time elapsed since the last call to Update.</param>
     public void Update(GameTime gameTime)
     {
       // Read the keyboard and gamepad.
@@ -259,7 +257,7 @@ namespace MonoGameBallerburg
         // Pop the topmost screen off the waiting list.
         GameScreen screen = screensToUpdate[screensToUpdate.Count - 1];
 
-        // If this is an active non-popup, inform any subsequent               
+        // If this is an active non-popup, inform any subsequent
         screensToUpdate.RemoveAt(screensToUpdate.Count - 1);
 
         /*
@@ -341,7 +339,7 @@ namespace MonoGameBallerburg
     /// Adds a new screen to the screen manager.
     /// </summary>
     /// <param name="screen">The screen.</param>
-    /// <exception cref="ArgumentNullException">screen parameter was null</exception>
+    /// <exception cref="ArgumentNullException">screen parameter was null.</exception>
     public void AddScreen(GameScreen screen)
     {
       if (screen == null)
@@ -458,7 +456,7 @@ namespace MonoGameBallerburg
     }
 
     /// <summary>
-    /// Releases unmanaged and - optionally - managed resources
+    /// Releases unmanaged and - optionally - managed resources.
     /// </summary>
     /// <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
     protected virtual void Dispose(bool disposing)

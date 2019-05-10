@@ -1,5 +1,5 @@
 ﻿// <copyright file="GamePlayMenuLabel.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
@@ -69,9 +69,9 @@ namespace MonoGameBallerburg.Controls
     }
 
     /// <summary>
-    /// Determine current state of the button
+    /// Determine current state of the button.
     /// </summary>
-    /// <param name="gameTime">Time elapsed since the last call to Update</param>
+    /// <param name="gameTime">Time elapsed since the last call to Update.</param>
     public override void Update(GameTime gameTime)
     {
     }

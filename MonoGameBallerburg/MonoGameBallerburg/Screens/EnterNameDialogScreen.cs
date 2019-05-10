@@ -1,21 +1,19 @@
 ﻿// <copyright file="EnterNameDialogScreen.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
 namespace MonoGameBallerburg.Screens
 {
   using System;
-
-  using Controls;
-  using Manager;
   using Microsoft.Xna.Framework;
   using Microsoft.Xna.Framework.Graphics;
-
+  using MonoGameBallerburg.Controls;
   using MonoGameBallerburg.Gameplay;
+  using MonoGameBallerburg.Manager;
 
   /// <summary>
-  /// Dialog zur Eingabe des Spielernamens
+  /// Dialog zur Eingabe des Spielernamens.
   /// </summary>
   public class EnterNameDialogScreen : GameScreen
   {
@@ -38,7 +36,7 @@ namespace MonoGameBallerburg.Screens
                     {
                       Position = new Vector2(200, 250),
                       Text = playerSettings.PlayerName,
-                      ShowCursor = true
+                      ShowCursor = true,
                     };
       textBox.SetFocus();
 
@@ -72,7 +70,7 @@ namespace MonoGameBallerburg.Screens
     /// <summary>
     /// Draws the message box.
     /// </summary>
-    /// <param name="gameTime">Game time passed</param>
+    /// <param name="gameTime">Game time passed.</param>
     public override void Draw(GameTime gameTime)
     {
       SpriteBatch spriteBatch = ScreenManager.SpriteBatch;

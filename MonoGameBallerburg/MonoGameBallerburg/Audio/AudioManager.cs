@@ -1,17 +1,16 @@
 ﻿// <copyright file="AudioManager.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
 namespace MonoGameBallerburg.Audio
 {
   using System;
-  using Gameplay;
-  using Manager;
   using Microsoft.Xna.Framework;
   using Microsoft.Xna.Framework.Audio;
   using Microsoft.Xna.Framework.Media;
-  using MonoGame.Framework;
+  using MonoGameBallerburg.Gameplay;
+  using MonoGameBallerburg.Manager;
 
   /// <summary>
   /// Class used to handle music and effect sounds in the game
@@ -33,7 +32,7 @@ namespace MonoGameBallerburg.Audio
     /// <summary>
     /// Initializes a new instance of the <see cref="AudioManager"/> class.
     /// </summary>
-    /// <param name="settings">The settings.</param>        
+    /// <param name="settings">The settings.</param>
     public AudioManager(ApplicationSettings settings, ContentManager content)
     {
       this.applicationSettings = settings;
@@ -58,8 +57,8 @@ namespace MonoGameBallerburg.Audio
         var defaultCategory = this.audioEngine.GetCategory("Menu");
        * */
       this.applicationSettings.MusicVolume = MathHelper.Clamp(volume + 0.01f, 0.0f, 2.0f);
-      
-      MediaPlayer.Volume = MathHelper.Clamp(volume + 0.01f, 0.0f, 1.0f);      
+
+      MediaPlayer.Volume = MathHelper.Clamp(volume + 0.01f, 0.0f, 1.0f);
       /*
         defaultCategory.SetVolume(this.applicationSettings.MusicVolume);
        * */
@@ -154,10 +153,10 @@ namespace MonoGameBallerburg.Audio
     public void PlayCannonRotateSound()
     {
       rotateSound = contentManager.SoundEffects["CannonRotateSound"].CreateInstance();
-      rotateSound.IsLooped=true;
+      rotateSound.IsLooped = true;
       rotateSound.Play();
       /*
-        this.sound12 = this.soundBank.GetCue("Sound12");          
+        this.sound12 = this.soundBank.GetCue("Sound12");
         this.sound12.Play();
        * */
     }
@@ -168,7 +167,7 @@ namespace MonoGameBallerburg.Audio
     public void StopCannonRotateSound()
     {
       rotateSound.Stop();
-           //contentManager.SoundEffects["CannonRotateSound"].Play()
+           ////contentManager.SoundEffects["CannonRotateSound"].Play()
       /*
         if (this.sound12 != null)
         {

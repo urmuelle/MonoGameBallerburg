@@ -1,14 +1,14 @@
 ﻿// <copyright file="MessageBoxScreen.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
 namespace MonoGameBallerburg.Screens
 {
   using System;
-  using Manager;
   using Microsoft.Xna.Framework;
   using Microsoft.Xna.Framework.Graphics;
+  using MonoGameBallerburg.Manager;
 
   /// <summary>
   /// A popup message box screen, used to display "are you sure?"

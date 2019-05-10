@@ -1,11 +1,11 @@
 ﻿// <copyright file="IGameSettingsManager.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
 namespace MonoGameBallerburg.Manager
 {
-  using Gameplay;
+  using MonoGameBallerburg.Gameplay;
 
   public interface IGameSettingsManager
   {
@@ -26,7 +26,7 @@ namespace MonoGameBallerburg.Manager
     GameType GameStyle { get; set; }
 
     /// <summary>
-    /// Gets or sets a value indicating whether switching the camera is animated (bezier)
+    /// Gets or sets a value indicating whether switching the camera is animated (bezier).
     /// </summary>
     /// <value>
     /// The flag value.

@@ -1,5 +1,5 @@
 ﻿// <copyright file="HSlider.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
@@ -17,7 +17,7 @@ namespace MonoGameBallerburg.Controls
     private float scale;
     private float min = 0.0f;
     private float max = 1.0f;
-    private float value; // 0.0f to 1.0f        
+    private float value; // 0.0f to 1.0f
 
     private float keyTimer = 0.0f;
     private bool repeat = false;
@@ -160,7 +160,7 @@ namespace MonoGameBallerburg.Controls
     }
 
     /// <summary>
-    /// Implementiert die Logik des Controls
+    /// Implementiert die Logik des Controls.
     /// </summary>
     /// <param name="gameTime">The game time.</param>
     public override void Update(GameTime gameTime)
@@ -268,7 +268,7 @@ namespace MonoGameBallerburg.Controls
     }
 
     /// <summary>
-    /// Implementiert den Render-Prozess des Controls
+    /// Implementiert den Render-Prozess des Controls.
     /// </summary>
     /// <param name="gameTime">The game time.</param>
     public override void Draw(GameTime gameTime)

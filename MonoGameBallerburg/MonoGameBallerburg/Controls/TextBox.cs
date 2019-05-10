@@ -1,5 +1,5 @@
 ﻿// <copyright file="TextBox.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
@@ -13,7 +13,7 @@ namespace MonoGameBallerburg.Controls
 
   using MonoGameBallerburg.Gameplay;
   using MonoGameBallerburg.Manager;
-  
+
   public class TextBox : Control
   {
     private string textString;
@@ -28,9 +28,14 @@ namespace MonoGameBallerburg.Controls
     private bool focused;
 
     /// <summary>
-    /// Keyboard state
+    /// Keyboard state.
     /// </summary>
-    private KeyboardState oldKeyboardState, currentKeyboardState;
+    private KeyboardState oldKeyboardState;
+
+    /// <summary>
+    /// Keyboard state.
+    /// </summary>
+    private KeyboardState currentKeyboardState;
     private bool inEntryMode;
     private SpriteFont font;
     private bool isEditable;
@@ -50,7 +55,7 @@ namespace MonoGameBallerburg.Controls
       Position = new Vector2(10, 10);
       textString = string.Empty;
       cursor = BallerburgGame.Instance.Content.Load<Texture2D>(@"GUI\cursor");
-      Position = new Vector2();
+      Position = default(Vector2);
       cursorPosition = new Vector2(
           Position.X + 5,
           Position.Y + 5);
@@ -101,12 +106,12 @@ namespace MonoGameBallerburg.Controls
     }
 
     /// <summary>
-    /// Gets the rectangle occupied by this string
+    /// Gets the rectangle occupied by this string.
     /// </summary>
-    /// <returns>The rect this textbox spans</returns>
+    /// <returns>The rect this textbox spans.</returns>
     public Rectangle GetTextRect()
     {
-      Rectangle rect = new Rectangle();
+      Rectangle rect = default(Rectangle);
       ScreenManager screenManager = Owner.ScreenManager;
       SpriteFont font = screenManager.Font;
       rect.X = (int)position.X;
@@ -163,7 +168,7 @@ namespace MonoGameBallerburg.Controls
         color = Color.Gray;
       }
 
-      // Draw text, centered on the middle of each line.            
+      // Draw text, centered on the middle of each line.
       font = Owner.ScreenManager.MenuFont;
       var spriteBatch = Owner.ScreenManager.SpriteBatch;
 
@@ -226,7 +231,7 @@ namespace MonoGameBallerburg.Controls
     /// Called when graphics resources need to be loaded. Override this method to load any component-specific graphics resources.
     /// </summary>
     protected override void LoadContent()
-    {            
+    {
         //this.font = this.parentScreen.ScreenManager.MenuFont;
         base.LoadContent();
     }
@@ -313,7 +318,7 @@ namespace MonoGameBallerburg.Controls
                 {
                   if (key == Keys.Enter)
                   {
-                    ////posFont = new Vector2(20, 20);                                     
+                    ////posFont = new Vector2(20, 20);
                   }
                   else
                   {

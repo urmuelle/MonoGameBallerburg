@@ -1,17 +1,17 @@
 ﻿// <copyright file="IGameObjectManager.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
 namespace MonoGameBallerburg.Manager
 {
   using System.Collections.ObjectModel;
-  using Animation;
-  using Graphic;
   using Microsoft.Xna.Framework;
+  using MonoGameBallerburg.Animation;
+  using MonoGameBallerburg.Graphic;
 
   /// <summary>
-  /// Interface for a game object manager
+  /// Interface for a game object manager.
   /// </summary>
   public interface IGameObjectManager
   {

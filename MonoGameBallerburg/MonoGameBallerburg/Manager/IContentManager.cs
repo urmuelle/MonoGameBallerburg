@@ -1,19 +1,19 @@
 ﻿// <copyright file="IContentManager.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
 namespace MonoGameBallerburg.Manager
 {
   using System.Collections.Generic;
-  using Graphic;
   using Microsoft.Xna.Framework.Audio;
   using Microsoft.Xna.Framework.Graphics;
   using Microsoft.Xna.Framework.Media;
+  using MonoGameBallerburg.Graphic;
   using XnaContentManager = Microsoft.Xna.Framework.Content.ContentManager;
 
   /// <summary>
-  /// Interface for the content manager
+  /// Interface for the content manager.
   /// </summary>
   public interface IContentManager
   {

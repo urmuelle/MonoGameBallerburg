@@ -1,5 +1,5 @@
 // <copyright file="MenuEntry.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
@@ -10,11 +10,8 @@ namespace MonoGameBallerburg.Controls
   using Microsoft.Xna.Framework;
   using Microsoft.Xna.Framework.Graphics;
   using Microsoft.Xna.Framework.Input;
-
-  using MonoGameBallerburg.Audio;
   using MonoGameBallerburg.Gameplay;
-
-  using Screens;
+  using MonoGameBallerburg.Screens;
 
   /// <summary>
   /// Helper class represents a single entry in a MenuScreen. By default this
@@ -30,7 +27,7 @@ namespace MonoGameBallerburg.Controls
     private string text;
 
     /// <summary>
-    /// Initializes a new instance of the MenuEntry class
+    /// Initializes a new instance of the <see cref="MenuEntry"/> class.
     /// </summary>
     /// <param name="screen">The screen to be drawn on.</param>
     /// <param name="text">The text to be drawn.</param>
@@ -88,7 +85,7 @@ namespace MonoGameBallerburg.Controls
     {
       get
       {
-        var rect = new Rectangle();
+        var rect = default(Rectangle);
         var screenManager = this.Owner.ScreenManager;
         var font = screenManager.Font;
         rect.X = (int)this.Position.X;

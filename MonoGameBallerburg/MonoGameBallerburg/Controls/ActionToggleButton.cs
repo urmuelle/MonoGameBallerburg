@@ -1,5 +1,5 @@
 ﻿// <copyright file="ActionToggleButton.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
@@ -10,13 +10,13 @@ namespace MonoGameBallerburg.Controls
   using Microsoft.Xna.Framework;
   using Microsoft.Xna.Framework.Graphics;
   using Microsoft.Xna.Framework.Input;
-  
+
   using MonoGameBallerburg.Audio;
   using MonoGameBallerburg.Gameplay;
   using MonoGameBallerburg.Screens;
 
     /// <summary>
-  /// Toggling Button
+  /// Toggling Button.
   /// </summary>
   public class ActionToggleButton : Control
   {
@@ -76,14 +76,14 @@ namespace MonoGameBallerburg.Controls
     }
 
     /// <summary>
-    /// Gets the rectangle occupied by this string
+    /// Gets the rectangle occupied by this string.
     /// </summary>
-    /// <returns>Rectangle the size of the text</returns>
+    /// <returns>Rectangle the size of the text.</returns>
     public Rectangle TextRect
     {
       get
       {
-        var rect = new Rectangle();
+        var rect = default(Rectangle);
         var screenManager = this.Owner.ScreenManager;
         var font = screenManager.Font;
         rect.X = (int)this.Position.X;
@@ -95,7 +95,7 @@ namespace MonoGameBallerburg.Controls
     }
 
     /// <summary>
-    /// Den Button als nicht aktiv setzen
+    /// Den Button als nicht aktiv setzen.
     /// </summary>
     public void SetInactive()
     {
@@ -103,7 +103,7 @@ namespace MonoGameBallerburg.Controls
     }
 
     /// <summary>
-    /// Den Button aktiv setzen
+    /// Den Button aktiv setzen.
     /// </summary>
     public void SetActive()
     {
@@ -123,9 +123,9 @@ namespace MonoGameBallerburg.Controls
     }
 
     /// <summary>
-    /// Determine current state of the button
+    /// Determine current state of the button.
     /// </summary>
-    /// <param name="gameTime">Time elapsed since the last call to Update</param>
+    /// <param name="gameTime">Time elapsed since the last call to Update.</param>
     public override void Update(GameTime gameTime)
     {
       if ((this.State != States.Hidden) && (this.State != States.None) && (this.State != States.Inactive))
@@ -184,7 +184,7 @@ namespace MonoGameBallerburg.Controls
         color = Color.Gray;
       }
 
-      // Draw text, centered on the middle of each line.            
+      // Draw text, centered on the middle of each line.
       SpriteBatch spriteBatch = this.Owner.ScreenManager.SpriteBatch;
       SpriteFont font = this.Owner.ScreenManager.Font;
 
@@ -199,7 +199,7 @@ namespace MonoGameBallerburg.Controls
     /// Queries how much space this menu entry requires.
     /// </summary>
     /// <param name="screen">The screen.</param>
-    /// <returns>The screens height</returns>
+    /// <returns>The screens height.</returns>
     public virtual int GetHeight(MenuScreen screen)
     {
       return screen.ScreenManager.Font.LineSpacing;

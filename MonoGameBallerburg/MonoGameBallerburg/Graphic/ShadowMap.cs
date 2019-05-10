@@ -1,5 +1,5 @@
 ﻿// <copyright file="ShadowMap.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
@@ -20,13 +20,13 @@ namespace MonoGameBallerburg.Graphic
       BoundingFrustum cameraFrustum = new BoundingFrustum(Matrix.Identity);
       // The shadow map render target
       RenderTarget2D shadowRenderTarget;
-      private SpriteBatch spriteBatch;        
+      private SpriteBatch spriteBatch;
       private ScreenManager screenManager;
       private Camera camera;
 
       public ShadowMap(SpriteBatch spriteBatch, GraphicsDevice graphicsDevice, ScreenManager screenManager, Camera camera)
       {
-          this.spriteBatch = spriteBatch;            
+          this.spriteBatch = spriteBatch;
           this.screenManager = screenManager;
           this.camera = camera;
           this.shadowRenderTarget = new RenderTarget2D(BallerburgGame.Instance.GraphicsDevice,
@@ -38,8 +38,8 @@ namespace MonoGameBallerburg.Graphic
       }
 
       /// <summary>
-      /// Creates the WorldViewProjection matrix from the perspective of the 
-      /// light using the cameras bounding frustum to determine what is visible 
+      /// Creates the WorldViewProjection matrix from the perspective of the
+      /// light using the cameras bounding frustum to determine what is visible
       /// in the scene.
       /// </summary>
       /// <returns>The WorldViewProjection for the light</returns>
@@ -66,11 +66,11 @@ namespace MonoGameBallerburg.Graphic
           Vector3 halfBoxSize = boxSize * 0.5f;
 
           // The position of the light should be in the center of the back
-          // pannel of the box. 
+          // pannel of the box.
           Vector3 lightPosition = lightBox.Min + halfBoxSize;
           lightPosition.Z = lightBox.Min.Z;
 
-          // We need the position back in world coordinates so we transform 
+          // We need the position back in world coordinates so we transform
           // the light position by the inverse of the lights rotation
           lightPosition = Vector3.Transform(lightPosition,
                                             Matrix.Invert(lightRotation));
@@ -89,7 +89,7 @@ namespace MonoGameBallerburg.Graphic
       }
 
       /// <summary>
-      /// Renders the scene to the floating point render target then 
+      /// Renders the scene to the floating point render target then
       /// sets the texture for use when drawing the scene.
       /// </summary>
       public void CreateShadowMap(Effect shaderEffect)
@@ -98,7 +98,7 @@ namespace MonoGameBallerburg.Graphic
           BallerburgGame.Instance.GraphicsDevice.SetRenderTarget(shadowRenderTarget);
 
           // Clear the render target to white or all 1's
-          // We set the clear to white since that represents the 
+          // We set the clear to white since that represents the
           // furthest the object could be away
           BallerburgGame.Instance.GraphicsDevice.Clear(Color.White);
 
@@ -110,8 +110,8 @@ namespace MonoGameBallerburg.Graphic
               {
                   cannonBall.Draw(new GameTime(), this.camera.ViewMatrix, this.camera.ProjMatrix);
               }
-          }            
-            
+          }
+
           foreach (Gameplay.PlayerSettings ps in BallerburgGame.PlayerSettings)
           {
               if (ps.IsActive)
@@ -149,7 +149,7 @@ namespace MonoGameBallerburg.Graphic
           // Draw the dude model
           world = Matrix.CreateRotationY(MathHelper.ToRadians(rotateDude));
           DrawModel(dudeModel, false);
-           * 
+           *
       }
 
       /// <summary>
@@ -185,7 +185,7 @@ namespace MonoGameBallerburg.Graphic
               // Draw the mesh
               mesh.Draw();
           }
-           * 
+           *
       }
 
       /// <summary>

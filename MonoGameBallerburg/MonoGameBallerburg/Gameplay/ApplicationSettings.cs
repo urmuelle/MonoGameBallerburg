@@ -1,5 +1,5 @@
 ﻿// <copyright file="ApplicationSettings.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
@@ -11,7 +11,7 @@ namespace MonoGameBallerburg.Gameplay
   using System.Text;
 
   /// <summary>
-  /// The Background Music tracks
+  /// The Background Music tracks.
   /// </summary>
   public enum BackgroundMusicTrack
   {
@@ -43,11 +43,11 @@ namespace MonoGameBallerburg.Gameplay
     /// <summary>
     /// No background sound
     /// </summary>
-    Aus
+    Aus,
   }
 
   /// <summary>
-  /// Common settings for sound and display adapter
+  /// Common settings for sound and display adapter.
   /// </summary>
   public class ApplicationSettings
   {

@@ -1,14 +1,13 @@
 ﻿// <copyright file="IScreenManager.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
 namespace MonoGameBallerburg.Manager
 {
-  using Gameplay;
   using Microsoft.Xna.Framework;
-
   using MonoGameBallerburg.Audio;
+  using MonoGameBallerburg.Gameplay;
 
   /// <summary>
   /// Nötige Funktionen für einen ScreenManager.

@@ -1,5 +1,5 @@
 ﻿// <copyright file="PlayerSettings.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
@@ -8,7 +8,7 @@ namespace MonoGameBallerburg.Gameplay
   using System.Linq;
 
   /// <summary>
-  /// Player Type: human or ai
+  /// Player Type: human or ai.
   /// </summary>
   public enum PlayerType
   {
@@ -20,11 +20,11 @@ namespace MonoGameBallerburg.Gameplay
     /// <summary>
     /// An ai player
     /// </summary>
-    Computer
+    Computer,
   }
 
   /// <summary>
-  /// The sort of cannonballs available in the game
+  /// The sort of cannonballs available in the game.
   /// </summary>
   public enum CannonballType
   {
@@ -36,11 +36,11 @@ namespace MonoGameBallerburg.Gameplay
     /// <summary>
     /// Iron cannonballs
     /// </summary>
-    Iron
+    Iron,
   }
 
   /// <summary>
-  /// Class holding the individual player settings like castle, money, etc
+  /// Class holding the individual player settings like castle, money, etc.
   /// </summary>
   public class PlayerSettings
   {
@@ -69,10 +69,10 @@ namespace MonoGameBallerburg.Gameplay
     }
 
     /// <summary>
-    /// Gets or sets the cannonballtype
+    /// Gets or sets the cannonballtype.
     /// </summary>
     /// <value>
-    /// The type value
+    /// The type value.
     /// </value>
     public CannonballType CannonballType { get; set; }
 
@@ -153,19 +153,19 @@ namespace MonoGameBallerburg.Gameplay
     #endregion
 
     /// <summary>
-    /// Get the number of active cannons
+    /// Get the number of active cannons.
     /// </summary>
-    /// <returns>The number of active cannons</returns>
+    /// <returns>The number of active cannons.</returns>
     public int NumCannons()
     {
       return Castle.Towers.Count(t => t.HasCannon);
     }
 
     /// <summary>
-    /// Get the number of active cannons
+    /// Get the number of active cannons.
     /// </summary>
     /// <returns>
-    /// The number of active cannons
+    /// The number of active cannons.
     /// </returns>
     public int MaxNumCannons()
     {

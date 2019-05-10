@@ -1,5 +1,5 @@
 // <copyright file="MousePointer.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
@@ -168,9 +168,9 @@ namespace MonoGameBallerburg
     }
 
     /// <summary>
-    /// Allows the game commponent to Draw itself
+    /// Allows the game commponent to Draw itself.
     /// </summary>
-    /// <param name="gameTime">Provides a snapshot of timing values</param>
+    /// <param name="gameTime">Provides a snapshot of timing values.</param>
     public override void Draw(GameTime gameTime)
     {
       ////this.spriteBatch.Begin(SpriteBlendMode.AlphaBlend);

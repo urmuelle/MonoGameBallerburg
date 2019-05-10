@@ -1,5 +1,5 @@
 ﻿// <copyright file="Hud.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
@@ -13,7 +13,7 @@ namespace MonoGameBallerburg.Controls
   using MonoGameBallerburg.Gameplay;
 
   /// <summary>
-  /// Class to be used as a HUD
+  /// Class to be used as a HUD.
   /// </summary>
   public class Hud : IDisposable
   {
@@ -50,7 +50,7 @@ namespace MonoGameBallerburg.Controls
     }
 
     /// <summary>
-    /// Releases unmanaged and - optionally - managed resources
+    /// Releases unmanaged and - optionally - managed resources.
     /// </summary>
     /// <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
     protected virtual void Dispose(bool disposing)

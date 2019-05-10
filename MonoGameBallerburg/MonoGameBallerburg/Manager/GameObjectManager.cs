@@ -1,5 +1,5 @@
 ﻿// <copyright file="GameObjectManager.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
@@ -7,12 +7,10 @@ namespace MonoGameBallerburg.Manager
 {
   using System;
   using System.Collections.ObjectModel;
-  using Animation;
-
-  using Graphic;
   using Microsoft.Xna.Framework;
-
+  using MonoGameBallerburg.Animation;
   using MonoGameBallerburg.Audio;
+  using MonoGameBallerburg.Graphic;
 
   public class GameObjectManager : IGameObjectManager, IDisposable
   {

@@ -1,5 +1,5 @@
 ﻿// <copyright file="IGameplayService.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
@@ -11,7 +11,7 @@ namespace MonoGameBallerburg.Gameplay
   using System.Text;
 
   /// <summary>
-  /// Interface for accessing the actual gamelogic
+  /// Interface for accessing the actual gamelogic.
   /// </summary>
   public interface IGameplayService
   {

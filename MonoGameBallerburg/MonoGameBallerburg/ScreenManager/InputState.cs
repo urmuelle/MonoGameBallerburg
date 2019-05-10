@@ -1,5 +1,5 @@
 // <copyright file="InputState.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
@@ -120,7 +120,7 @@ namespace MonoGameBallerburg
       }
     }
 
-    /// <summary>        
+    /// <summary>
     /// Checks for a "pause the game" input action, from any player,
     /// on either keyboard or gamepad.
     /// </summary>

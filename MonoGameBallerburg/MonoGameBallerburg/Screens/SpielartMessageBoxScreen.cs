@@ -1,15 +1,15 @@
 ﻿// <copyright file="SpielartMessageBoxScreen.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
 namespace MonoGameBallerburg.Screens
 {
   using System;
-  using Controls;
-  using Manager;
   using Microsoft.Xna.Framework;
   using Microsoft.Xna.Framework.Graphics;
+  using MonoGameBallerburg.Controls;
+  using MonoGameBallerburg.Manager;
 
   public class SpielartMessageBoxScreen : GameScreen
   {
@@ -100,7 +100,7 @@ namespace MonoGameBallerburg.Screens
     /// <summary>
     /// Draws the message box.
     /// </summary>
-    /// <param name="gameTime">Game time passed</param>
+    /// <param name="gameTime">Game time passed.</param>
     public override void Draw(GameTime gameTime)
     {
       var spriteBatch = ScreenManager.SpriteBatch;

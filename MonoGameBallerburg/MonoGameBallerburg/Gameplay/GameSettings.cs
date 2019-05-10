@@ -1,5 +1,5 @@
 ﻿// <copyright file="GameSettings.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
@@ -68,7 +68,7 @@ namespace MonoGameBallerburg.Gameplay
     /// <summary>
     /// Let the system choose
     /// </summary>
-    Zufall
+    Zufall,
   }
 
   public enum Difficulty
@@ -91,7 +91,7 @@ namespace MonoGameBallerburg.Gameplay
     /// <summary>
     /// Easy difficulty
     /// </summary>
-    Anfänger
+    Anfänger,
   }
 
   public enum GameType
@@ -104,7 +104,7 @@ namespace MonoGameBallerburg.Gameplay
     /// <summary>
     /// Arkade Modus
     /// </summary>
-    Arkade
+    Arkade,
   }
 
   public class GameSettings : IGameSettingsManager
@@ -126,7 +126,7 @@ namespace MonoGameBallerburg.Gameplay
     public GameType GameStyle { get; set; }
 
     /// <summary>
-    /// Gets or sets a value indicating whether switching the camera is animated (bezier)
+    /// Gets or sets a value indicating whether switching the camera is animated (bezier).
     /// </summary>
     /// <value>
     /// The flag value.

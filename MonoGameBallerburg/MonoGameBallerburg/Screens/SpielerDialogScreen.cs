@@ -1,5 +1,5 @@
 ﻿// <copyright file="SpielerDialogScreen.cs" company="Urs Müller">
-//     Urs Müller. All rights reserved.
+// Copyright (c) Urs Müller. All rights reserved.
 // </copyright>
 // <author>Urs Müller</author>
 
@@ -8,18 +8,15 @@ namespace MonoGameBallerburg.Screens
   using System;
   using System.Collections.Generic;
   using System.Collections.ObjectModel;
-
-  using Controls;
-  using Graphic;
-  using Manager;
-
   using Microsoft.Xna.Framework;
   using Microsoft.Xna.Framework.Graphics;
-
+  using MonoGameBallerburg.Controls;
   using MonoGameBallerburg.Gameplay;
+  using MonoGameBallerburg.Graphic;
+  using MonoGameBallerburg.Manager;
 
   /// <summary>
-  /// The dialog to configure player settings
+  /// The dialog to configure player settings.
   /// </summary>
   public class SpielerDialogScreen : MenuScreen, IDisposable
   {
@@ -49,7 +46,7 @@ namespace MonoGameBallerburg.Screens
     /// <summary>
     /// Initializes a new instance of the <see cref="SpielerDialogScreen"/> class.
     /// </summary>
-    /// <param name="graphicsManager">The GraphicsManager</param>
+    /// <param name="graphicsManager">The GraphicsManager.</param>
     /// <param name="screenManager">The screen manager.</param>
     /// <param name="spielerNr">The spieler nr.</param>
     /// <param name="playerSettings">The player settings.</param>
@@ -75,7 +72,7 @@ namespace MonoGameBallerburg.Screens
 
       computerMenuEntry = new ComboToggleButton(this, "Computer", new Collection<string>(entries), selectedEntry, 0)
                               {
-                                Position = new Vector2(10, 100)
+                                Position = new Vector2(10, 100),
                               };
       computerMenuEntry.Selected += ComputerMenuEntrySelected;
 
@@ -218,7 +215,7 @@ namespace MonoGameBallerburg.Screens
 
     /// <summary>
     /// When the user presses this button, we go on to the messagebox screen
-    /// asking for the gamestyle he wants to play
+    /// asking for the gamestyle he wants to play.
     /// </summary>
     /// <param name="sender">The sender.</param>
     /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
@@ -246,7 +243,7 @@ namespace MonoGameBallerburg.Screens
     }
 
     /// <summary>
-    /// Set the players type: human or pc
+    /// Set the players type: human or pc.
     /// </summary>
     /// <param name="sender">The sender.</param>
     /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
@@ -312,7 +309,7 @@ namespace MonoGameBallerburg.Screens
     }
 
     /// <summary>
-    /// Releases unmanaged and - optionally - managed resources
+    /// Releases unmanaged and - optionally - managed resources.
     /// </summary>
     /// <param name="disposing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
     protected virtual void Dispose(bool disposing)
